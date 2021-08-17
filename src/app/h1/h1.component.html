@@ -1,0 +1,23 @@
+<div class="header">
+    <p>Giới tính</p>
+    <div class="header-btn-group">
+        <button (click)="handleFilterMale()">Nam</button>
+        <button (click)="handleFilterFemale()">Nữ</button>
+    </div>
+</div>
+<table>
+    <tr>
+        <th>STT</th>
+        <th>Tên</th>
+        <th>Quê quán</th>
+        <th>Giới tính</th>
+    </tr>
+    <tr *ngFor="let people of data; let i = index" 
+    [ngClass]="people.sex===check ? 'color' : 'reverse-color'">
+        <td>{{i+1}}</td>
+        <td>{{people.name}}</td>
+        <td>{{people.country}}</td>
+        <td *ngIf="people.sex==='Male'">Nam</td>
+        <td *ngIf="people.sex!=='Male'">Nữ</td>
+    </tr>
+</table>

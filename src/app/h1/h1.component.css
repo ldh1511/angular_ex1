@@ -1,0 +1,45 @@
+table{
+    width:100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+table td, table th {
+    padding: 8px;
+}
+/* table tr:nth-child(even){
+    background-color: #f2f2f2;
+}  */
+table tr:hover {
+    background-color: #ddd;
+}
+table th {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: left;
+    background-color: #ec7b69;
+    color: white;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;
+}
+.header-btn-group{
+    display: flex;
+    align-items: center;
+}
+.header-btn-group button{
+    width: 70px;
+    margin-left: 10px;
+    padding: 0;
+    height: 35px;
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+}
+.color{
+    background-color:#8a8aff;
+}
+.reverse-color{
+    background-color:#e6e6e6;
+}
