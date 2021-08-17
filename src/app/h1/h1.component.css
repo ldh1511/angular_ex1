@@ -2,12 +2,27 @@ table{
     width:100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+table tr{
+    grid-template-columns: 5% 30% 30% 25% 10%;
+    display: grid;
+    border-bottom: 1px solid white;
+}
+table tr:last-child{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+table tr:first-child{
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    overflow: hidden;
+}
 table td, table th {
     padding: 8px;
 }
-/* table tr:nth-child(even){
-    background-color: #f2f2f2;
-}  */
+table td i{
+    cursor: pointer;
+}
 table tr:hover {
     background-color: #ddd;
 }
@@ -28,14 +43,17 @@ table th {
     display: flex;
     align-items: center;
 }
-.header-btn-group button{
+.header-btn-group button,
+p button{
     width: 70px;
     margin-left: 10px;
     padding: 0;
     height: 35px;
     border: none;
-    border-radius: 35px;
+    border-radius: 6px;
     cursor: pointer;
+    background: white;
+    box-shadow: rgb(0 0 0 / 15%) 0px 5px 15px 0px;
 }
 .color{
     background-color:#8a8aff;

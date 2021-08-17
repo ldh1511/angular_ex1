@@ -17,10 +17,13 @@ export class MainComponent implements OnInit {
   isModalOpen=false;
   recevieMessage($event){
     this.isModalOpen=$event;
-    console.log(this.isModalOpen)
   }
   recevieData($event){
     this.data=[...this.data, $event];
+    localStorage.setItem('data',JSON.stringify(this.data));
+  }
+  removeItem($event){
+    this.data=$event;
     localStorage.setItem('data',JSON.stringify(this.data));
   }
   ngOnInit(): void {

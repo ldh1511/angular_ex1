@@ -1,8 +1,11 @@
 <div class="header">
-    <p>Giới tính</p>
-    <div class="header-btn-group">
+    <p>
+        Giới tính
         <button (click)="handleFilterMale()">Nam</button>
         <button (click)="handleFilterFemale()">Nữ</button>
+    </p>
+    <div class="header-btn-group">
+       
         <button (click)="handleOpenModal()">Thêm</button>
     </div>
 </div>
@@ -12,6 +15,7 @@
         <th>Tên</th>
         <th>Quê quán</th>
         <th>Giới tính</th>
+        <th>Tác vụ</th>
     </tr>
     <tr *ngFor="let people of data; let i = index" 
     [ngClass]="people.sex===check ? 'color' : 'reverse-color'">
@@ -20,5 +24,8 @@
         <td>{{people.country}}</td>
         <td *ngIf="people.sex==='Male'">Nam</td>
         <td *ngIf="people.sex!=='Male'">Nữ</td>
+        <td>
+            <i class="fas fa-trash" (click)="handleRemoveItem(i)"></i>
+        </td>
     </tr>
 </table>

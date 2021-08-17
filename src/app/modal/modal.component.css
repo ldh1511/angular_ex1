@@ -1,25 +1,33 @@
 form{
-    padding: 20px;
-    background-color: #d1d1ff;
+    padding: 10px;
+    background-color: white;
     border-radius: 15px;
-    width: 60%;
+    width: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: none;
+    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
 }
 .form-active{
     display: block;
 }
+form h3{
+    margin: 0;
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
 div{
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 div p{
     display: flex;
+    align-items: center;
 }
 div p label{
     flex: 1;
@@ -27,9 +35,12 @@ div p label{
 div p input{
     flex: 5;
     border: none;
-    border-radius: 10px;
+    border-radius: 35px;
     outline: none;
     font-size: 14px;
+    height: 35px;
+    background: whitesmoke;
+    padding: 0 15px;
 }
 .radio-group-box{
     margin: 0;
@@ -41,14 +52,22 @@ p:last-child input{
 button{
     border: none;
     outline: none;
-    background: white;
+    background: #48c148;
     padding: 10px;
-    border-radius: 25px;
+    border-radius: 10px;
+    margin-right: 10px;
+    width: 100px;
+    color: white;
+    cursor: pointer;
 }
 .btn-group{
     margin: 0;
     margin-top: 10px;
     cursor: pointer;
+}
+.btn-group button:last-child{
+    background: #ff6e6e;
+    color: white;
 }
 .invalid-text{
     display:  block !important;
@@ -57,5 +76,6 @@ button{
 .invalid-text > div{
     margin: 0;
     color: red;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    font-style: oblique;
 }
