@@ -1,0 +1,33 @@
+<form [formGroup]="contactForm" (ngSubmit)="onRegister()" [ngClass]="isModalOpen===true ? 'form-active' : ''">
+    <div>
+        <p>
+            <label for="name">Họ và tên </label>
+            <input type="text" id="name" name="name" formControlName="name">
+        </p>
+        <div *ngIf="sumitted && contactForm.controls.name.invalid" class="invalid-text">
+            <div *ngIf=" sumitted && contactForm.controls.name.errors">Tên bắt buộc nhập</div>
+        </div>
+    </div>
+    <div>
+        <p>
+            <label for="country">Quê quán </label>
+            <input type="text" id="country" name="country" formControlName="country">
+        </p>
+        <div *ngIf="sumitted && contactForm.controls.country.invalid" class="invalid-text">
+            <div *ngIf=" sumitted && contactForm.controls.country.errors">Quê quán bắt buộc nhập</div>
+        </div>
+    </div>
+    <div class="radio-group">
+        <div class="radio-group-box">
+            <input type="radio" value="Male" id="sex" name="sex" formControlName="sex"> Nam
+            <input type="radio" value="Female" id="sex" name="sex" formControlName="sex"> Nữ
+        </div>
+        <div *ngIf="sumitted && contactForm.controls.sex.invalid" class="invalid-text">
+            <div *ngIf=" sumitted && contactForm.controls.sex.errors">Giới tính bắt buộc nhập</div>
+        </div>
+    </div>
+    <p class="btn-group">
+        <button type="submit">Submit</button>
+        <button (click)="handleCloseModal($event)">Close</button>
+    </p>
+</form>

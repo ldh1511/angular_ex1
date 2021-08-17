@@ -1,0 +1,2 @@
+<app-h1 [isModalOpen]="isModalOpen" (messageEvent)="recevieMessage($event)" [data]="data"></app-h1>
+<app-modal [isModalOpen]="isModalOpen" (recevieData)="recevieData($event)" (messageEvent)="recevieMessage($event)"></app-modal>

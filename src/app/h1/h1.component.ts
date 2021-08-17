@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms'
 @Component({
   selector: 'app-h1',
   templateUrl: './h1.component.html',
@@ -7,16 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class H1Component {
   check='';
-  data = [
-    { name: 'Daniel', country: 'TP Hồ Chí Minh', sex: 'Female' },
-    { name: 'John', country: 'Hà Nội', sex: 'Male' },
-    { name: 'John', country: 'Đà Nẵng', sex: 'Female' },
-    { name: 'John', country: 'Cần Thơ', sex: 'Male' },
-  ];
+  @Input() isModalOpen: boolean;
+  @Input() data: any[];
+  @Output()messageEvent= new EventEmitter<boolean>();
   handleFilterMale(){
     this.check="Male";
   }
   handleFilterFemale(){
     this.check="Female";
+  }
+  handleOpenModal(){
+    this.isModalOpen=true;
+    this.messageEvent.emit(this.isModalOpen);
   }
 }
