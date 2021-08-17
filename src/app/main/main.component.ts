@@ -14,6 +14,7 @@ export class MainComponent implements OnInit {
     { name: 'John', country: 'Đà Nẵng', sex: 'Female' },
     { name: 'John', country: 'Cần Thơ', sex: 'Male' },
   ];
+  editItem=null;
   isModalOpen=false;
   recevieMessage($event){
     this.isModalOpen=$event;
@@ -25,6 +26,9 @@ export class MainComponent implements OnInit {
   removeItem($event){
     this.data=$event;
     localStorage.setItem('data',JSON.stringify(this.data));
+  }
+  receiveEditItem($event){
+    this.editItem=$event;
   }
   ngOnInit(): void {
   }

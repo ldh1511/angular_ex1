@@ -11,6 +11,7 @@ export class H1Component {
   @Input() data: any[];
   @Output() messageEvent= new EventEmitter<boolean>();
   @Output() removeItem = new EventEmitter<object>();
+  @Output() receiveEditItem = new EventEmitter<object>();
   handleFilterMale(){
     this.check="Male";
   }
@@ -24,5 +25,8 @@ export class H1Component {
   handleRemoveItem(item){
     this.data=this.data.filter((items,i)=>i!==item);
     this.removeItem.emit(this.data);
+  }
+  handleEditItem(item){
+    this.receiveEditItem.emit(this.data[item]);
   }
 }

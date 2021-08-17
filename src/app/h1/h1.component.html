@@ -5,7 +5,6 @@
         <button (click)="handleFilterFemale()">Nữ</button>
     </p>
     <div class="header-btn-group">
-       
         <button (click)="handleOpenModal()">Thêm</button>
     </div>
 </div>
@@ -26,6 +25,7 @@
         <td *ngIf="people.sex!=='Male'">Nữ</td>
         <td>
             <i class="fas fa-trash" (click)="handleRemoveItem(i)"></i>
+            <i class="fas fa-edit" (click)="handleEditItem(i)"></i>
         </td>
     </tr>
 </table>

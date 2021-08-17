@@ -27,6 +27,9 @@
             <div *ngIf=" sumitted && contactForm.controls.sex.errors">Giới tính bắt buộc nhập</div>
         </div>
     </div>
+    <div *ngIf="sumitted && existsData===true" class="invalid-text">
+        <div>Quê quán không được trùng</div>
+    </div>
     <p class="btn-group">
         <button type="submit">Submit</button>
         <button (click)="handleCloseModal($event)">Close</button>

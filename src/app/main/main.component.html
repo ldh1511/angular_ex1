@@ -1,2 +1,2 @@
-<app-h1 [isModalOpen]="isModalOpen" (messageEvent)="recevieMessage($event)" [data]="data" (removeItem)="removeItem($event)"></app-h1>
-<app-modal [isModalOpen]="isModalOpen" (recevieData)="recevieData($event)" (messageEvent)="recevieMessage($event)"></app-modal>
+<app-h1 [isModalOpen]="isModalOpen" (messageEvent)="recevieMessage($event)" [data]="data" (removeItem)="removeItem($event)" (receiveEditItem)="receiveEditItem($event)"></app-h1>
+<app-modal [isModalOpen]="isModalOpen" (recevieData)="recevieData($event)" (messageEvent)="recevieMessage($event)" [data]="data" [editItem]="editItem"></app-modal>
