@@ -28,7 +28,10 @@
             <div *ngIf=" sumitted && contactForm.controls.sex.errors">Giới tính bắt buộc nhập</div>
         </div>
     </div>
-    <div *ngIf="sumitted && existsData===true && added===true" class="invalid-text">
+    <div *ngIf="sumitted && existsName===true && added===true" class="invalid-text">
+        <div>Tên không được trùng</div>
+    </div>
+    <div *ngIf="sumitted && existsCountry===true && added===true" class="invalid-text">
         <div>Quê quán không được trùng</div>
     </div>
     <p class="btn-group">
@@ -36,4 +39,3 @@
         <button (click)="handleCloseModal($event)">Close</button>
     </p>
 </form>
-{{added}}

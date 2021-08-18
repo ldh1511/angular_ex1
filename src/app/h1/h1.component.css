@@ -3,7 +3,7 @@ table{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 table tr{
-    grid-template-columns: 5% 30% 30% 25% 10%;
+    grid-template-columns: 5% 30% 30% 20% 15%;
     display: grid;
     border-bottom: 1px solid white;
 }
@@ -22,6 +22,14 @@ table td, table th {
 }
 table td i{
     cursor: pointer;
+    margin: 0 10px;
+}
+table td a{
+    text-decoration: none;
+    background: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-left: 15px;
 }
 table tr:hover {
     background-color: #ddd;

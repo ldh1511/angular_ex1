@@ -9,10 +9,10 @@ export class MainComponent implements OnInit {
   constructor() { }
   check = localStorage.getItem('data');
   data = this.check !== null ? JSON.parse(this.check) : [
-    { id: '1', name: 'Daniel', country: 'TP Hồ Chí Minh', sex: 'Female' },
-    { id: '2', name: 'John', country: 'Hà Nội', sex: 'Male' },
-    { id: '3', name: 'John', country: 'Đà Nẵng', sex: 'Female' },
-    { id: '4', name: 'John', country: 'Cần Thơ', sex: 'Male' },
+    { id: 1, name: 'Daniel', country: 'TP Hồ Chí Minh', sex: 'Female' },
+    { id: 2, name: 'John', country: 'Hà Nội', sex: 'Male' },
+    { id: 3, name: 'John', country: 'Đà Nẵng', sex: 'Female' },
+    { id: 4, name: 'John', country: 'Cần Thơ', sex: 'Male' },
   ];
   editItem = null;
   isModalOpen = false;

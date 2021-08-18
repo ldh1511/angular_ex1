@@ -15,7 +15,8 @@ export class ModalComponent implements OnInit {
   @Output() handleEditItem = new EventEmitter<object>();
   constructor() { }
   sumitted = false;
-  existsData = false;
+  existsCountry = false;
+  existsName = false;
   added = false;
   title = 'Thêm mới thông tin';
   ngOnInit(): void { }
@@ -43,13 +44,16 @@ export class ModalComponent implements OnInit {
   onRegister() {
     this.sumitted = true;
     const frmValue = this.contactForm.value;
-    let check = this.data.some(({ country }) => country === frmValue['country']);
-    this.existsData = check;
+    let checkExistCountry = this.data.some(({ country }) => country === frmValue['country']);
+    let checkExistName = this.data.some(({ name }) => name === frmValue['name']);
+    this.existsCountry = checkExistCountry;
+    this.existsName = checkExistName;
     if (
       frmValue['name'] !== null &&
       frmValue['country'] !== null &&
       frmValue['sex'] !== null &&
-      this.existsData === false &&
+      this.existsCountry === false &&
+      this.existsName === false &&
       this.added === true) {
       this.recevieData.emit(frmValue);
       this.isModalOpen = false;

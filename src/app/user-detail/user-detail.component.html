@@ -1,0 +1,16 @@
+<div class="user-detail">
+    <div class="user-detail-box">
+        <h3>Thông tin chi tiết</h3>
+        <p>Tên : {{userDetail.name}}</p>
+        <p>Quê quán : {{userDetail.country}}</p>
+        <p>Giới tính : {{userDetail.sex}}</p>
+    </div>
+    <div class="user-detail-column">
+        <ul>
+            <li *ngFor="let user of data">
+                <a routerLink="/task1/{{user.id}}">{{user.name}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<router-outlet></router-outlet>
