@@ -1,5 +1,4 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms'
 @Component({
   selector: 'app-h1',
   templateUrl: './h1.component.html',
@@ -20,7 +19,7 @@ export class H1Component {
   }
   handleOpenModal(){
     this.isModalOpen=true;
-    this.messageEvent.emit(this.isModalOpen);
+    this.messageEvent.emit(true);
   }
   handleRemoveItem(item){
     this.data=this.data.filter((items,i)=>i!==item);
@@ -28,5 +27,7 @@ export class H1Component {
   }
   handleEditItem(item){
     this.receiveEditItem.emit(this.data[item]);
+    this.isModalOpen=true;
+    this.messageEvent.emit(this.isModalOpen);
   }
 }

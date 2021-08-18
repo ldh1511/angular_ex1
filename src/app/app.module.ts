@@ -7,7 +7,6 @@ import { H1Component } from './h1/h1.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModalComponent } from './modal/modal.component';
 import { MainComponent } from './main/main.component';
-
 @NgModule({
   declarations: [
     AppComponent,

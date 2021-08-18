@@ -1,9 +1,10 @@
 <form [formGroup]="contactForm" (ngSubmit)="onRegister()" [ngClass]="isModalOpen===true ? 'form-active' : ''">
-    <h3>Thêm mới thông tin</h3>
+    <h3>{{title}}</h3>
     <div>
         <p>
             <label for="name">Họ và tên </label>
             <input type="text" id="name" name="name" formControlName="name">
+            <input type="hidden" id="id" name="id" formControlName="id" [ngModel]="data.length+1">
         </p>
         <div *ngIf="sumitted && contactForm.controls.name.invalid" class="invalid-text">
             <div *ngIf=" sumitted && contactForm.controls.name.errors">Tên bắt buộc nhập</div>
@@ -27,7 +28,7 @@
             <div *ngIf=" sumitted && contactForm.controls.sex.errors">Giới tính bắt buộc nhập</div>
         </div>
     </div>
-    <div *ngIf="sumitted && existsData===true" class="invalid-text">
+    <div *ngIf="sumitted && existsData===true && added===true" class="invalid-text">
         <div>Quê quán không được trùng</div>
     </div>
     <p class="btn-group">
@@ -35,3 +36,4 @@
         <button (click)="handleCloseModal($event)">Close</button>
     </p>
 </form>
+{{added}}

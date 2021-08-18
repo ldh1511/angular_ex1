@@ -18,7 +18,7 @@
     </tr>
     <tr *ngFor="let people of data; let i = index" 
     [ngClass]="people.sex===check ? 'color' : 'reverse-color'">
-        <td>{{i+1}}</td>
+        <td>{{people.id}}</td>
         <td>{{people.name}}</td>
         <td>{{people.country}}</td>
         <td *ngIf="people.sex==='Male'">Nam</td>
