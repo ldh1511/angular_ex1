@@ -11,6 +11,7 @@ import { userDetailService } from '../userDetail.service';
 export class UserDetailComponent implements OnInit {
   userDetail:UserDetail ;
   data=JSON.parse(localStorage.getItem('data'));
+  checkData=null;
   constructor(
     private route:ActivatedRoute,
     private router:Router,
@@ -20,9 +21,13 @@ export class UserDetailComponent implements OnInit {
     this.getUserDetail();
   }
   getUserDetail(): void{
-    const id=Number(this.route.snapshot.paramMap.get('id'));
-    this.userDetailService.getUserDetail(id)
+    this.route.paramMap.subscribe(param=>{
+      const id=Number(param.get('id'));
+      this.userDetailService.getUserDetail(id)
       .subscribe(userDetail => this.userDetail = userDetail);
+      let test=this.data.filter(item=>item.id!==this.userDetail.id);
+      this.checkData=test;
+    })
     if(this.userDetail===undefined){
       this.router.navigate(['**'])
     }

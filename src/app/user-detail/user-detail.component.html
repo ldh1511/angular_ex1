@@ -7,7 +7,7 @@
     </div>
     <div class="user-detail-column">
         <ul>
-            <li *ngFor="let user of data">
+            <li *ngFor="let user of checkData">
                 <a routerLink="/task1/{{user.id}}">{{user.name}}</a>
             </li>
         </ul>

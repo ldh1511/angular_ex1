@@ -39,9 +39,11 @@
     border-radius: 10px;
 }
 .user-detail-column ul li a{
-    width: 100%;
     color: white;
     text-decoration: none;
+    min-width: 100%;
+    max-width: 100%;
+    display: block;
 }
 .user-detail-column ul li:hover{
     background-color: #5b5bff;;
