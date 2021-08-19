@@ -17,7 +17,7 @@
         <th>Tác vụ</th>
     </tr>
     <tr *ngFor="let people of data; let i = index" 
-    [ngClass]="people.sex===check ? 'color' : 'reverse-color'">
+    [class]="people.sex===check ? 'color' : 'reverse-color'">
         <td>{{people.id}}</td>
         <td>{{people.name}}</td>
         <td>{{people.country}}</td>

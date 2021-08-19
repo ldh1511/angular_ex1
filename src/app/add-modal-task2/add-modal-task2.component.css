@@ -1,0 +1,58 @@
+.modal-task2{
+    position: absolute;
+    width: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #f2f2f2;
+    border-radius: 10px;
+    padding: 15px;
+    display: none;
+}
+.modal-task2 h3{
+    font-size: 1.9rem;
+}
+.active{
+    display: block;
+}
+.input-group{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+.input-group label{
+    flex: 2;
+}
+.input-group input{
+    border: none;
+    font-family: inherit;
+    padding: 5px;
+    outline: none;
+    border-radius: 10px;
+    flex: 3;
+}
+.modal-task2-btn-group{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 120px;
+}
+.modal-task2-btn-group button{
+    background: #4c994c;
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    flex: 1;
+    cursor: pointer;
+    color: white;
+}
+.modal-task2-btn-group button:last-child{
+    background: #ff4747;
+}
+.invalid-btn p,
+.invalid-btn i{
+    color: red;
+}

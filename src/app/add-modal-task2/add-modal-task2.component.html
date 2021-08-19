@@ -1,0 +1,41 @@
+<div class="modal-task2" [class.active]="isModalOpen" >
+    <h3>Thêm thông tin việc cần làm</h3>
+    <form (ngSubmit)="handleSubmitForm()" [formGroup]="modalForm">
+        <div class="input-group">
+            <label>Tên công việc</label>
+            <input type="text" name="name" id="name" formControlName="name">
+            <input type="hidden" name="id" id="id" formControlName="id" [ngModel]="data.length+1">
+        </div>
+        <div *ngIf="summited && modalForm.controls.name.invalid" class="invalid-btn">
+            <p *ngIf="summited && modalForm.controls.name.errors">
+                <i class="fas fa-exclamation-triangle"></i>
+                Tên công việc bắt buộc nhập
+            </p>
+        </div>
+        <div class="input-group">
+            <label>Thời gian hoàn thành</label>
+            <input type="text" name="time" id="time" formControlName="time">
+        </div>
+        <div *ngIf="summited && modalForm.controls.time.invalid" class="invalid-btn">
+            <p *ngIf="summited && modalForm.controls.time.errors">
+                <i class="fas fa-exclamation-triangle"></i>
+                Thời gian hoàn thành bắt buộc nhập
+            </p>
+        </div>
+        <div class="input-group">
+            <label>Trạng thái</label>
+            <input type="radio" name="state" [value]="unfinish" formControlName="state"> Chưa hoàn thành
+            <input type="radio" name="state" [value]="finish" formControlName="state"> Đã hoàn thành
+        </div>
+        <div *ngIf="summited && modalForm.controls.state.invalid" class="invalid-btn">
+            <p *ngIf="summited && modalForm.controls.state.errors">
+                <i class="fas fa-exclamation-triangle"></i>
+                Trạng thái bắt buộc nhập
+            </p>
+        </div>
+        <div class="modal-task2-btn-group">
+            <button type="submit">Thêm</button>
+            <button (click)="handleCloseModal($event)">Huỷ</button>
+        </div>
+    </form>
+</div>
