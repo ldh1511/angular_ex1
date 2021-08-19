@@ -16,29 +16,35 @@
             <th>Trạng thái</th>
             <th>Tác vụ</th>
         </tr>
-        <tr *ngFor="let item of filterData; let i=index">
+        <tr *ngFor="let item of filterData; let i=index" [class]="editItem.includes(item.id)? 'edit': ''">
             <td>{{i+1}}</td>
-            <td>{{item.name}}</td>
-            <td>{{item.time}}</td>
-            <td>
-                <input type="checkbox" [checked]="item.state">
+            <td *ngIf="!editItem.includes(item.id)">
+                {{item.name}}
             </td>
-            <td class="row-btn">
-                <button>Sửa</button>
+            <td *ngIf="editItem.includes(item.id)">
+                <div class="edit-input-group">
+                    <input type="text" class="edit-input" [defaultValue]="item.name" (change)="handleChangeName($event, item.id)">
+                    <div class="row-btn">
+                        <button (click)="handleCancelEditItem(item.id)">Huỷ</button>
+                        <button (click)="handleSaveItem(item.id)">Xong</button>
+                    </div>
+                </div>
+            </td>
+            <td *ngIf="!editItem.includes(item.id)">
+                {{item.time}}
+            </td>
+            <td *ngIf="!editItem.includes(item.id)">
+                <input type="checkbox" [checked]="item.state" (change)="handleChangeState($event, item.id)">
+            </td>
+            <td class="row-btn" *ngIf="!editItem.includes(item.id)">
+                <button (click)="handleEditItem(item.id)">Sửa</button>
                 <button (click)="handleDeleteItem(item.id)">Xoá</button>
             </td>
         </tr>
     </table>
-    <app-add-modal-task2 
-    [isModalOpen]="isModalOpen"  
-    (receiveStateModal)="receiveStateModal($event)"
-    [data]="data"
-    (receiveNewData)="receiveNewData($event)"
-    ></app-add-modal-task2>
-    <app-remove-modal-task2
-    [isModalRemoveOpen]="isModalRemoveOpen"
-    [removeItem]="removeItem"
-    (receiveStateRemoveModal)="receiveStateRemoveModal($event)"
-    (receiveDeleteItem)="receiveDeleteItem($event)"
-    ></app-remove-modal-task2>
+    <app-add-modal-task2 [isModalOpen]="isModalOpen" (receiveStateModal)="receiveStateModal($event)" [data]="data"
+        (receiveNewData)="receiveNewData($event)"></app-add-modal-task2>
+    <app-remove-modal-task2 [isModalRemoveOpen]="isModalRemoveOpen" [removeItem]="removeItem"
+        (receiveStateRemoveModal)="receiveStateRemoveModal($event)" (receiveDeleteItem)="receiveDeleteItem($event)">
+    </app-remove-modal-task2>
 </div>

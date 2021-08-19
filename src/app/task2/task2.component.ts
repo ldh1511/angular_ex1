@@ -15,7 +15,8 @@ export class Task2Component implements OnInit {
   isModalOpen = false;
   isModalRemoveOpen=false;
   removeItem=null;
-  editItem=null;
+  editItem=[];
+  editItemContent=[];
   checkData = localStorage.getItem('data_task2');
   data = this.checkData !== null ? JSON.parse(this.checkData) : this.dataExample;
   filterData=this.data;
@@ -50,6 +51,54 @@ export class Task2Component implements OnInit {
   handleDeleteItem(e){
     this.isModalRemoveOpen=true;
     this.removeItem=e;
+  }
+  handleChangeState(e, id){
+    this.data.map((item, i) => {
+      if (item.id == id) {
+        this.data[i].state=e.target.checked;
+        this.filterData[i].state=e.target.checked;
+      }
+    });
+    localStorage.setItem('data_task2', JSON.stringify(this.data))
+  }
+  handleEditItem(id){
+    this.editItem.push(id);
+  }
+  handleChangeName(e, id){
+    let value=e.target.value;
+    if(this.editItemContent.length>0){
+      this.editItemContent.map((item, i)=>{
+        if(item.id===id && item.content!==value){
+          this.editItemContent[i].content=value;
+        }
+        else{
+          this.editItemContent=[...this.editItemContent, {
+            id: id,
+            content: value,
+          }]
+        }
+      })
+    }
+    if(this.editItemContent.length===0){
+      this.editItemContent.push({
+        id: id,
+        content: value,
+      })
+    }
+  }
+  handleSaveItem(id){
+    let matchValue=this.editItemContent.filter(item=>item.id===id);
+    this.data.map((item, i)=>{
+      if(item.id===matchValue[0].id){
+        this.data[i].name=matchValue[0].content;
+        this.editItem=this.editItem.filter(item=>item!==id)
+      }
+    })
+    this.filterData=this.data;
+    localStorage.setItem('data_task2', JSON.stringify(this.data))
+  }
+  handleCancelEditItem(id){
+    this.editItem=this.editItem.filter(item=>item!==id)
   }
   receiveDeleteItem($event){
     this.data=this.data.filter(item=>item.id!==$event);

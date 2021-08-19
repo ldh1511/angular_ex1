@@ -14,6 +14,26 @@
     display: grid;
     border-bottom: 1px solid black;
 }
+.edit{
+    grid-template-columns: 5% 95% !important;
+}
+.edit-input-group{
+    display: grid;
+    grid-template-columns: 85% 15%;
+}
+.edit-input-group .row-btn{
+    margin-left: 5px;
+}
+.edit-input{
+    width: 100%;
+    outline: none;
+    background: #fafafa;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-family: inherit;
+}
 .task2 table tr:first-child{
     border-bottom:none;
 }
@@ -32,6 +52,13 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
+}
+.task2-btn-group select{
+    border: navajowhite;
+    background: #efefef;
+    padding: 5px 10px;
+    border-radius: 5px;
+    outline: none;
 }
 .task2  button{
     outline: none;
