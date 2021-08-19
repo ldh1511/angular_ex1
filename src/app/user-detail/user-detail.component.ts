@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ActivatedRoute} from '@angular/router';
 import { UserDetail } from '../models/userDetail';
 import { userDetailService } from '../userDetail.service';
 
@@ -12,9 +12,9 @@ export class UserDetailComponent implements OnInit {
   userDetail:UserDetail ;
   data=JSON.parse(localStorage.getItem('data'));
   checkData=null;
+  text=null;
   constructor(
     private route:ActivatedRoute,
-    private router:Router,
     private userDetailService: userDetailService
     ) { }
   ngOnInit(): void {
@@ -25,12 +25,18 @@ export class UserDetailComponent implements OnInit {
       const id=Number(param.get('id'));
       this.userDetailService.getUserDetail(id)
       .subscribe(userDetail => this.userDetail = userDetail);
-      let test=this.data.filter(item=>item.id!==this.userDetail.id);
-      this.checkData=test;
+      if(this.userDetail!==undefined){
+        let test=this.data.filter(item=> item.id!==this.userDetail.id);
+        this.checkData=test;
+        this.text=null;
+        console.log("not ok")
+      }
+      else{
+        this.checkData=this.data;
+        this.text="None data";
+        console.log("ok");
+      }
     })
-    if(this.userDetail===undefined){
-      this.router.navigate(['**'])
-    }
   }
 
 }

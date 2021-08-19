@@ -1,10 +1,14 @@
 <div class="user-detail">
-    <div class="user-detail-box">
+    <div *ngIf="text===null" class="user-detail-box">
         <h3>Thông tin chi tiết</h3>
         <p>Tên : {{userDetail.name}}</p>
         <p>Quê quán : {{userDetail.country}}</p>
         <p *ngIf="userDetail.sex==='Male'">Giới tính : Nam</p>
         <p *ngIf="userDetail.sex==='Female'">Giới tính : Nữ</p>
+    </div>
+    <div *ngIf="text!==null" class="user-detail-box">
+        <h3>Thông tin chi tiết</h3>
+        <p>{{text}}</p>
     </div>
     <div class="user-detail-column">
         <ul>
@@ -14,4 +18,3 @@
         </ul>
     </div>
 </div>
-<router-outlet></router-outlet>
