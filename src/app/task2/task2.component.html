@@ -42,7 +42,7 @@
             </td>
         </tr>
     </table>
-    <app-add-modal-task2 [isModalOpen]="isModalOpen" (receiveStateModal)="receiveStateModal($event)" [data]="data"
+    <app-add-modal-task2 [isModalTask2Open]="isModalTask2Open" (receiveStateModal)="receiveStateModal($event)" [data]="data"
         (receiveNewData)="receiveNewData($event)"></app-add-modal-task2>
     <app-remove-modal-task2 [isModalRemoveOpen]="isModalRemoveOpen" [removeItem]="removeItem"
         (receiveStateRemoveModal)="receiveStateRemoveModal($event)" (receiveDeleteItem)="receiveDeleteItem($event)">

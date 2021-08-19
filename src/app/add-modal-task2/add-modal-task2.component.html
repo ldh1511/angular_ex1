@@ -1,10 +1,10 @@
-<div class="modal-task2" [class.active]="isModalOpen" >
+<div class="modal-task2" [class.active]="isModalTask2Open" >
     <h3>Thêm thông tin việc cần làm</h3>
     <form (ngSubmit)="handleSubmitForm()" [formGroup]="modalForm">
         <div class="input-group">
             <label>Tên công việc</label>
             <input type="text" name="name" id="name" formControlName="name">
-            <input type="hidden" name="id" id="id" formControlName="id" [ngModel]="data[data.length-1].id+1">
+            <input type="hidden" name="id" id="id" formControlName="id" [ngModel]="data[data.length-1]+1">
         </div>
         <div *ngIf="summited && modalForm.controls.name.invalid" class="invalid-btn">
             <p *ngIf="summited && modalForm.controls.name.errors">

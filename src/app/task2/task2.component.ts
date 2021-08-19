@@ -12,7 +12,7 @@ export class Task2Component implements OnInit {
     { id: 3, name: 'Đi làm', time: '8:00', state: false },
     { id: 4, name: 'Tập thể dục', time: '6:30', state: true },
   ]
-  isModalOpen = false;
+  isModalTask2Open = false;
   isModalRemoveOpen=false;
   removeItem=null;
   editItem=[];
@@ -30,7 +30,7 @@ export class Task2Component implements OnInit {
     }
   }
   handleOpenModal(): void {
-    this.isModalOpen = true;
+    this.isModalTask2Open = true;
   }
   handleChangeType(e): void{
     let state=e.target.value;
@@ -106,7 +106,7 @@ export class Task2Component implements OnInit {
     localStorage.setItem('data_task2', JSON.stringify(this.data))
   }
   receiveStateModal($event): void {
-    this.isModalOpen = $event
+    this.isModalTask2Open = $event
   }
   receiveStateRemoveModal($event): void {
     this.isModalRemoveOpen = $event

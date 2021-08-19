@@ -7,7 +7,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./add-modal-task2.component.css']
 })
 export class AddModalTask2Component implements OnInit {
-  @Input() isModalOpen: boolean;
+  @Input() isModalTask2Open: boolean;
   @Input() data: any[];
   @Output() receiveStateModal = new EventEmitter<boolean>();
   @Output() receiveNewData = new EventEmitter<object>();
@@ -27,9 +27,9 @@ export class AddModalTask2Component implements OnInit {
   )
   handleCloseModal($event) {
     $event.preventDefault();
-    this.isModalOpen = false;
+    this.isModalTask2Open = false;
     this.summited = false;
-    this.receiveStateModal.emit(this.isModalOpen);
+    this.receiveStateModal.emit(this.isModalTask2Open);
     this.modalForm.reset();
   }
   handleSubmitForm() {
@@ -37,9 +37,9 @@ export class AddModalTask2Component implements OnInit {
     const frmValue = this.modalForm.value;
     if (frmValue['name'] !== null && frmValue['time'] !== null && frmValue['id'] !== null && frmValue['state']!==null) {
       this.receiveNewData.emit(frmValue);
-      this.isModalOpen = false;
+      this.isModalTask2Open = false;
       this.summited = false;
-      this.receiveStateModal.emit(this.isModalOpen);
+      this.receiveStateModal.emit(this.isModalTask2Open);
       this.modalForm.reset();
     }
   }

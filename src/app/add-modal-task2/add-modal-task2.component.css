@@ -53,6 +53,6 @@
     background: #ff4747;
 }
 .invalid-btn p,
-.invalid-btn i{
+.invalid-btn {
     color: red;
 }
