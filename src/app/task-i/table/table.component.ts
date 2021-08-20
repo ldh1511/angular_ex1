@@ -1,10 +1,11 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+
 @Component({
-  selector: 'app-h1',
-  templateUrl: './h1.component.html',
-  styleUrls: ['./h1.component.css']
+  selector: 'app-table',
+  templateUrl: './table.component.html',
+  styleUrls: ['./table.component.css']
 })
-export class H1Component {
+export class TableComponent {
   check='';
   @Input() isModalOpen: boolean;
   @Input() data: any[];
@@ -30,4 +31,5 @@ export class H1Component {
     this.isModalOpen=true;
     this.messageEvent.emit(this.isModalOpen);
   }
+
 }

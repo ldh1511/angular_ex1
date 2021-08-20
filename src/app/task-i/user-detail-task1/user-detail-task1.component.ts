@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute} from '@angular/router';
-import { UserDetail } from '../models/userDetail';
-import { userDetailService } from '../userDetail.service';
+import { ActivatedRoute } from '@angular/router';
+import { UserDetail } from 'src/app/models/userDetail';
+import { userDetailService } from 'src/app/userDetail.service';
 
 @Component({
-  selector: 'app-user-detail',
-  templateUrl: './user-detail.component.html',
-  styleUrls: ['./user-detail.component.css']
+  selector: 'app-user-detail-task1',
+  templateUrl: './user-detail-task1.component.html',
+  styleUrls: ['./user-detail-task1.component.css']
 })
-export class UserDetailComponent implements OnInit {
+export class UserDetailTask1Component implements OnInit {
+
   userDetail:UserDetail ;
   data=JSON.parse(localStorage.getItem('data'));
   checkData=null;
@@ -38,5 +39,4 @@ export class UserDetailComponent implements OnInit {
       }
     })
   }
-
 }

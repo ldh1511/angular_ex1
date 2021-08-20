@@ -2,11 +2,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-add-modal-task2',
-  templateUrl: './add-modal-task2.component.html',
-  styleUrls: ['./add-modal-task2.component.css']
+  selector: 'app-add-modal',
+  templateUrl: './add-modal.component.html',
+  styleUrls: ['./add-modal.component.css']
 })
-export class AddModalTask2Component implements OnInit {
+export class AddModalComponent implements OnInit {
   @Input() isModalTask2Open: boolean;
   @Input() data: any[];
   @Output() receiveStateModal = new EventEmitter<boolean>();
@@ -17,7 +17,7 @@ export class AddModalTask2Component implements OnInit {
   constructor() { }
   ngOnInit(): void {
   }
-  modalForm = new FormGroup(
+  modalForm2 = new FormGroup(
     {
       id: new FormControl(null),
       name: new FormControl(null, [Validators.required]),
@@ -30,17 +30,17 @@ export class AddModalTask2Component implements OnInit {
     this.isModalTask2Open = false;
     this.summited = false;
     this.receiveStateModal.emit(this.isModalTask2Open);
-    this.modalForm.reset();
+    this.modalForm2.reset();
   }
   handleSubmitForm() {
     this.summited = true;
-    const frmValue = this.modalForm.value;
+    const frmValue = this.modalForm2.value;
     if (frmValue['name'] !== null && frmValue['time'] !== null && frmValue['id'] !== null && frmValue['state']!==null) {
       this.receiveNewData.emit(frmValue);
       this.isModalTask2Open = false;
       this.summited = false;
       this.receiveStateModal.emit(this.isModalTask2Open);
-      this.modalForm.reset();
+      this.modalForm2.reset();
     }
   }
 }

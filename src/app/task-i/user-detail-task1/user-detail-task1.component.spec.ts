@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RemoveModalTask2Component } from './remove-modal-task2.component';
+import { UserDetailTask1Component } from './user-detail-task1.component';
 
-describe('RemoveModalTask2Component', () => {
-  let component: RemoveModalTask2Component;
-  let fixture: ComponentFixture<RemoveModalTask2Component>;
+describe('UserDetailTask1Component', () => {
+  let component: UserDetailTask1Component;
+  let fixture: ComponentFixture<UserDetailTask1Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RemoveModalTask2Component ]
+      declarations: [ UserDetailTask1Component ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RemoveModalTask2Component);
+    fixture = TestBed.createComponent(UserDetailTask1Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

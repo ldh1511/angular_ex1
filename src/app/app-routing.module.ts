@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { MainComponent } from './main/main.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { UserDetailComponent } from './user-detail/user-detail.component';
 import { HomeComponent } from './home/home.component';
-import { Task2Component } from './task2/task2.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'task1/:id', component: UserDetailComponent },
-  { path: 'task1', component: MainComponent },
-  { path: 'task2', component: Task2Component },
+  {
+    path: 'task2',
+    loadChildren: () => import('./task-ii/task-ii.module').then(m => m.TaskIiModule)
+  },
+  {
+    path: 'task1',
+    loadChildren: () => import('./task-i/task-i.module').then(m => m.TaskIModule)
+  },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent }
 ];
 

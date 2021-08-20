@@ -1,15 +1,15 @@
-<app-h1 
+<app-table 
 [isModalOpen]="isModalOpen" 
 (messageEvent)="recevieMessage($event)" 
 [data]="data" (removeItem)="removeItem($event)" 
 (receiveEditItem)="receiveEditItem($event)"
-></app-h1>
-<app-modal 
+></app-table>
+<app-add-modal-task1 
 [isModalOpen]="isModalOpen" 
 (recevieData)="recevieData($event)" 
 (messageEvent)="recevieMessage($event)" 
 [data]="data" 
 [editItem]="editItem"
 (handleEditItem)="handleEditItem($event)"
-></app-modal>
+></app-add-modal-task1>
 <router-outlet></router-outlet>

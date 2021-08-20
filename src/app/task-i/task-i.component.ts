@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css']
+  selector: 'app-task-i',
+  templateUrl: './task-i.component.html',
+  styleUrls: ['./task-i.component.css']
 })
-export class MainComponent implements OnInit {
+export class TaskIComponent implements OnInit {
   dataExample=[
     { id: 1, name: 'Daniel', country: 'TP Hồ Chí Minh', sex: 'Female' },
     { id: 2, name: 'John', country: 'Hà Nội', sex: 'Male' },
@@ -53,5 +53,5 @@ export class MainComponent implements OnInit {
     });
     localStorage.setItem('data', JSON.stringify(this.data));
   }
-  
+
 }

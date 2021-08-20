@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { H1Component } from './h1.component';
+import { AddModalTask1Component } from './add-modal-task1.component';
 
-describe('H1Component', () => {
-  let component: H1Component;
-  let fixture: ComponentFixture<H1Component>;
+describe('AddModalTask1Component', () => {
+  let component: AddModalTask1Component;
+  let fixture: ComponentFixture<AddModalTask1Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ H1Component ]
+      declarations: [ AddModalTask1Component ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(H1Component);
+    fixture = TestBed.createComponent(AddModalTask1Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

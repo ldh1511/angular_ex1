@@ -1,12 +1,12 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-task2',
-  templateUrl: './task2.component.html',
-  styleUrls: ['./task2.component.css']
+  selector: 'app-task-ii',
+  templateUrl: './task-ii.component.html',
+  styleUrls: ['./task-ii.component.css']
 })
-export class Task2Component implements OnInit {
+export class TaskIiComponent implements OnInit {
+
   dataExample = [
     { id: 1, name: 'Tập thể dục', time: '6:30', state: false },
     { id: 2, name: 'Ăn sáng', time: '7:30', state: true },
@@ -123,4 +123,5 @@ export class Task2Component implements OnInit {
     this.filterData = this.data;
     localStorage.setItem('data_task2', JSON.stringify(this.data))
   }
+
 }

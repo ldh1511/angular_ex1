@@ -1,12 +1,13 @@
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms'
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-modal',
-  templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css']
+  selector: 'app-add-modal-task1',
+  templateUrl: './add-modal-task1.component.html',
+  styleUrls: ['./add-modal-task1.component.css']
 })
-export class ModalComponent implements OnInit {
+export class AddModalTask1Component implements OnInit {
+
   @Input() isModalOpen: boolean;
   @Input() data: any[];
   @Input() editItem: any = { name: '' };
@@ -80,4 +81,5 @@ export class ModalComponent implements OnInit {
     this.messageEvent.emit(this.isModalOpen);
     this.contactForm.reset();
   }
+
 }

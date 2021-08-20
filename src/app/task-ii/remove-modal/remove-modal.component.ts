@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-remove-modal-task2',
-  templateUrl: './remove-modal-task2.component.html',
-  styleUrls: ['./remove-modal-task2.component.css']
+  selector: 'app-remove-modal',
+  templateUrl: './remove-modal.component.html',
+  styleUrls: ['./remove-modal.component.css']
 })
-export class RemoveModalTask2Component implements OnInit {
+export class RemoveModalComponent implements OnInit {
 
   @Input() isModalRemoveOpen: boolean;
   @Input() removeItem: any;
@@ -24,5 +24,4 @@ export class RemoveModalTask2Component implements OnInit {
     this.isModalRemoveOpen=false;
     this.receiveStateRemoveModal.emit(this.isModalRemoveOpen);
   }
-
 }

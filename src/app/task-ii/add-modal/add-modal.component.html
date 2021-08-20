@@ -1,13 +1,13 @@
 <div class="modal-task2" [class.active]="isModalTask2Open">
     <h3>Thêm thông tin việc cần làm</h3>
-    <form (ngSubmit)="handleSubmitForm()" [formGroup]="modalForm">
+    <form (ngSubmit)="handleSubmitForm()" [formGroup]="modalForm2">
         <div class="input-group">
             <label>Tên công việc</label>
             <input type="text" name="name" id="name" formControlName="name">
             <input type="hidden" name="id" id="id" formControlName="id" [ngModel]="data[data.length-1].id+1">
         </div>
-        <div *ngIf="summited && modalForm.controls.name.invalid" class="invalid-btn">
-            <p *ngIf="summited && modalForm.controls.name.errors">
+        <div *ngIf="summited && modalForm2.controls.name.invalid" class="invalid-btn">
+            <p *ngIf="summited && modalForm2.controls.name.errors">
                 <i class="fas fa-exclamation-triangle"></i>
                 Tên công việc bắt buộc nhập
             </p>
@@ -16,8 +16,8 @@
             <label>Thời gian hoàn thành</label>
             <input type="text" name="time" id="time" formControlName="time">
         </div>
-        <div *ngIf="summited && modalForm.controls.time.invalid" class="invalid-btn">
-            <p *ngIf="summited && modalForm.controls.time.errors">
+        <div *ngIf="summited && modalForm2.controls.time.invalid" class="invalid-btn">
+            <p *ngIf="summited && modalForm2.controls.time.errors">
                 <i class="fas fa-exclamation-triangle"></i>
                 Thời gian hoàn thành bắt buộc nhập
             </p>
@@ -29,8 +29,8 @@
                 <input type="radio" name="state" [value]="finish" formControlName="state"> Đã hoàn thành
             </div>
         </div>
-        <div *ngIf="summited && modalForm.controls.state.invalid" class="invalid-btn">
-            <p *ngIf="summited && modalForm.controls.state.errors">
+        <div *ngIf="summited && modalForm2.controls.state.invalid" class="invalid-btn">
+            <p *ngIf="summited && modalForm2.controls.state.errors">
                 <i class="fas fa-exclamation-triangle"></i>
                 Trạng thái bắt buộc nhập
             </p>
