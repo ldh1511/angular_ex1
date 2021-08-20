@@ -3,9 +3,9 @@
     <div class="task2-btn-group">
         <button (click)="handleOpenModal()">Thêm</button>
         <select (change)="handleChangeType($event)">
-            <option value="all">Tất cả</option>
-            <option value="finish">Đã hoàn thành</option>
-            <option value="unfinish">Chưa hoàn thành</option>
+            <option [selected]="state==='all'" value="all">Tất cả</option>
+            <option [selected]="state==='finish'" value="finish">Đã hoàn thành</option>
+            <option [selected]="state==='unfinish'" value="unfinish">Chưa hoàn thành</option>
         </select>
     </div>
     <table>

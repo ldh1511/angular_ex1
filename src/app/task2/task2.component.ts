@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -17,6 +18,7 @@ export class Task2Component implements OnInit {
   removeItem=null;
   editItem=[];
   editItemContent=[];
+  state='all';
   checkData = localStorage.getItem('data_task2');
   data = this.checkData !== null ? JSON.parse(this.checkData) : this.dataExample;
   filterData=this.data;
@@ -31,10 +33,14 @@ export class Task2Component implements OnInit {
   }
   handleOpenModal(): void {
     this.isModalTask2Open = true;
+    this.editItem=[];
+    this.editItemContent=[];
   }
   handleChangeType(e): void{
-    let state=e.target.value;
-    switch (state) {
+    this.editItem=[];
+    this.editItemContent=[];
+    this.state=e.target.value;
+    switch (this.state) {
       case 'all':
         this.filterData=this.data;
         break;
@@ -112,8 +118,9 @@ export class Task2Component implements OnInit {
     this.isModalRemoveOpen = $event
   }
   receiveNewData($event): void {
+    this.state='all';
     this.data = [...this.data, $event];
-    this.filterData=this.data;
+    this.filterData = this.data;
     localStorage.setItem('data_task2', JSON.stringify(this.data))
   }
 }

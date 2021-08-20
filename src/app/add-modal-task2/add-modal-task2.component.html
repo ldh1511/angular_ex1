@@ -1,4 +1,4 @@
-<div class="modal-task2" [class.active]="isModalTask2Open" >
+<div class="modal-task2" [class.active]="isModalTask2Open">
     <h3>Thêm thông tin việc cần làm</h3>
     <form (ngSubmit)="handleSubmitForm()" [formGroup]="modalForm">
         <div class="input-group">
@@ -24,8 +24,10 @@
         </div>
         <div class="input-group">
             <label>Trạng thái</label>
-            <input type="radio" name="state" [value]="unfinish" formControlName="state"> Chưa hoàn thành
-            <input type="radio" name="state" [value]="finish" formControlName="state"> Đã hoàn thành
+            <div class="input-group-btn">
+                <input type="radio" name="state" [value]="unfinish" formControlName="state"> Chưa hoàn thành
+                <input type="radio" name="state" [value]="finish" formControlName="state"> Đã hoàn thành
+            </div>
         </div>
         <div *ngIf="summited && modalForm.controls.state.invalid" class="invalid-btn">
             <p *ngIf="summited && modalForm.controls.state.errors">
