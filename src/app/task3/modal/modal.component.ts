@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Task3Service } from '../service/task3.service';
 
 @Component({
   selector: 'app-modal',
@@ -7,9 +9,15 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ModalComponent implements OnInit {
   @Input() isModalOpen: boolean;
+  private getInfoFromChild: Subscription;
+  data={name:'', mean:'', type:''};
   @Output() receiveStateModal= new EventEmitter<any>();
-  constructor() { }
-  ngOnInit(): void { }
+  constructor(private task3Service: Task3Service,) { }
+  ngOnInit(): void {
+    this.getInfoFromChild = this.task3Service.InfoFromChild.subscribe(data => {
+      this.data=data
+    });
+  }
   handleCloseModal(){
     this.isModalOpen=false;
     this.receiveStateModal.emit(this.isModalOpen);

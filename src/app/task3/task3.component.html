@@ -1,7 +1,7 @@
 <div class="task3">
     <div class="task3-folder">
         <p>Tên danh mục</p>
-        <ul *ngFor="let item of data[0]">
+        <ul *ngFor="let item of ctg">
             <li>
                 <a routerLink="/task3/{{item.categoryId}}">
                     <i class="far fa-folder"></i>{{item.categoryName}}

@@ -21,5 +21,6 @@ export class ItemComponent implements OnInit {
   }
   onSend() {
     this.task3Service.notifyStateModal(true);
+    this.task3Service.notifyInfoModal(this.content);
   }
 }

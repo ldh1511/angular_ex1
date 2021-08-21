@@ -6,6 +6,8 @@ import { Task3Component } from './task3.component';
 import { ItemComponent } from './item/item.component';
 import { NoteComponent } from './note/note.component';
 import { ModalComponent } from './modal/modal.component';
+import { FlashCardComponent } from './flash-card/flash-card.component';
+import { FillComponent } from './fill/fill.component';
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import { ModalComponent } from './modal/modal.component';
     Task3Component,
     ItemComponent,
     NoteComponent,
-    ModalComponent
+    ModalComponent,
+    FlashCardComponent,
+    FillComponent
   ],
   imports: [
     CommonModule,

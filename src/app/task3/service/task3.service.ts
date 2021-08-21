@@ -10,12 +10,12 @@ export class Task3Service {
         return this.stateModal;
     }
     public get InfoFromChild() {
-        return this.stateModal;
+        return this.infoModal;
     }
     public notifyStateModal(number) {
         this.stateModal.next(number);
     }
-    public notifyInfoModal(number) {
-        this.stateModal.next(number);
+    public notifyInfoModal(data) {
+        this.infoModal.next(data);
     }
 }

@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: flex-end;
 }
-.task3-button button{
+.task3-button a{
     border: none;
     outline: none;
     padding: 10px;
@@ -19,8 +19,10 @@
     background: white;
     box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
     transition: all .2s;
+    display: block;
+    text-decoration: none;
 }
-.task3-button button:hover{
+.task3-button a:hover{
     background: #6c95ea;
     color: white;
 }

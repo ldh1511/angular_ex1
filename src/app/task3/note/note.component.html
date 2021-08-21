@@ -1,7 +1,7 @@
 <div class="task3-right">
     <div class="task3-button" *ngIf="data.length>0">
-        <button>Flash Card</button>
-        <button>Fill</button>
+        <a routerLink='/task3/{{id}}/flash-card'>Flash Card</a>
+        <a routerLink='/task3/{{id}}/fill'>Fill</a>
     </div>
     <div class="task3-content">
         <div *ngFor="let item of data">
