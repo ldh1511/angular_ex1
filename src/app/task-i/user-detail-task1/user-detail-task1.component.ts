@@ -30,12 +30,10 @@ export class UserDetailTask1Component implements OnInit {
         let test=this.data.filter(item=> item.id!==this.userDetail.id);
         this.checkData=test;
         this.text=null;
-        console.log("not ok")
       }
       else{
         this.checkData=this.data;
         this.text="None data";
-        console.log("ok");
       }
     })
   }

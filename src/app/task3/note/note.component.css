@@ -1,0 +1,32 @@
+.task3-right{
+    padding: 20px 20px 20px 0;
+}
+.task3-button{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.task3-button button{
+    border: none;
+    outline: none;
+    padding: 10px;
+    margin-left: 15px;
+    width: 100px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: inherit;
+    font-weight: 600;
+    background: white;
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
+    transition: all .2s;
+}
+.task3-button button:hover{
+    background: #6c95ea;
+    color: white;
+}
+.task3-content{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}

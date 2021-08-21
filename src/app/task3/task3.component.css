@@ -1,33 +1,32 @@
 
 .task3{
     margin: 0 auto;
-    max-width: 1150px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 20% 0% 80%;
     justify-content: space-between;
     background: #f8f9fa;
 }
 .task3-folder{
-    flex: 1;
     margin-right: 20px;
     background: #3367d6;
     color: white;
     height: 100vh;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
     overflow: hidden;
 }
 .task3-folder p{
     padding: 10px;
     background: #6c95ea;
     text-align: center;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
     font-weight: 600;
     font-size: 1.2rem;
 }
+.task3-folder ul{
+    margin-top: 20px;
+}
 .task3-folder ul li{
     list-style: none;
-    padding: 8px 12px;
     margin-top: 5px;
     cursor: pointer;
     display: block;
@@ -38,78 +37,21 @@
     align-items: center;
     font-weight: 500;
 }
-.task3-folder ul li i{
+.task3-folder ul li a{
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    padding: 8px 12px;
+    color: white;
+}
+.task3-folder ul li a i{
     margin-right: 10px;
     font-size: 1.2rem;
 }
-.task3-folder ul li:hover{
+.task3-folder ul li a:hover{
     background: #6c95ea;
     border-radius: 7px;
 }
-.task3-right{
+.task3-note{
     flex: 4;
-    padding: 20px 20px 20px 0;
-}
-.task3-button{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-.task3-button button{
-    border: none;
-    outline: none;
-    padding: 10px;
-    margin-left: 15px;
-    width: 100px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-family: inherit;
-    font-weight: 600;
-    background: white;
-    box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
-    transition: all .2s;
-}
-.task3-button button:hover{
-    background: #6c95ea;
-    color: white;
-}
-.task3-content{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 25px;
-}
-.task3-item{
-    background: white;
-    display: flex;
-    align-items: center;
-    padding: 20px 15px;
-    min-width: 200px;
-    margin-bottom: 20px;
-    border-radius: 7px;
-    cursor: pointer;
-    transition: all .2s;
-    font-size: 1.1rem;
-    font-weight: 100;
-}
-.task3-item:hover{
-    box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
-    background: #6c95ea;
-    color: white;
-}
-.task3-item:hover span{
-    color: white;
-    border-color: white;
-}
-.task3-item span{
-    margin-right: 10px;
-    display: block;
-    border: 2px solid #3367d6;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    border-radius: 50%;
-    color: #3367d6;
-    font-size: 1.5rem;
-    font-weight: 400;
 }
