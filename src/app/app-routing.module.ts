@@ -13,6 +13,10 @@ const routes: Routes = [
     path: 'task1',
     loadChildren: () => import('./task-i/task-i.module').then(m => m.TaskIModule)
   },
+  { 
+    path: 'task3', 
+    loadChildren: () => import('./task3/task3.module').then(m => m.Task3Module) 
+  },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent }
 ];
 
