@@ -45,4 +45,7 @@ export class Task3Component implements OnInit, OnDestroy {
   receiveStateModal($event){
     this.isModalOpen=$event
   }
+  handleCloseModal(){
+    this.isModalOpen =false;
+  }
 }
