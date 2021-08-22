@@ -3,7 +3,6 @@ import { Subject } from 'rxjs';
 
 @Injectable()
 export class Task3Service {
-
     private stateModal: Subject<boolean> = new Subject();
     private infoModal: Subject<any> = new Subject();
     public get StateFromChild() {

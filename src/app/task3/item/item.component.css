@@ -3,18 +3,22 @@
     display: flex;
     align-items: center;
     padding: 20px 15px;
-    min-width: 200px;
-    margin-bottom: 20px;
-    border-radius: 7px;
+    width: calc(100% - 20px);
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 15px;
     cursor: pointer;
     transition: all .2s;
     font-size: 1.1rem;
     font-weight: 100;
-    margin-right: 20px;
+    margin-bottom: 15px;
 }
 .task3-item:hover{
     box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
     background: #6c95ea;
+    color: white;
+}
+.task3-item:hover p{
     color: white;
 }
 .task3-item:hover span{
@@ -24,13 +28,17 @@
 .task3-item span{
     margin-right: 10px;
     display: block;
-    border: 2px solid #3367d6;
+    border: 3px solid #3367d6;
     width: 40px;
     height: 40px;
     text-align: center;
     border-radius: 50%;
     color: #3367d6;
     font-size: 1.5rem;
-    font-weight: 400;
+    font-weight: 600;
     text-transform: uppercase;
+}
+.task3-item p{
+    font-size: 2rem;
+    color: #7b7b7b;
 }

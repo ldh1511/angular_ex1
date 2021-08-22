@@ -5,25 +5,37 @@
     grid-template-columns: 20% 0% 80%;
     justify-content: space-between;
     background: #f8f9fa;
+    height: 100vh;
 }
 .task3-folder{
-    margin-right: 20px;
-    background: #3367d6;
+    margin: 10px 10px 0 10px;
+    position: relative;
     color: white;
-    height: 100vh;
     overflow: hidden;
 }
 .task3-folder p{
     padding: 10px;
     background: #6c95ea;
     text-align: center;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
     font-weight: 600;
-    font-size: 1.2rem;
+    border-radius: 20px;
+    position: absolute;
+    width: 71%;
+    height: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border: 6px solid #f8f9fa;
 }
 .task3-folder ul{
-    margin-top: 20px;
+    margin-top: 40px;
+    padding-top: 50px;
+    background: #4e4cac;
+    border-radius: 20px;
+    height: 91vh;
 }
 .task3-folder ul li{
     list-style: none;
@@ -41,16 +53,29 @@
     display: block;
     width: 100%;
     text-decoration: none;
-    padding: 8px 12px;
-    color: white;
+    padding: 15px;
+    color: #b0afff;
 }
 .task3-folder ul li a i{
     margin-right: 10px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    color: #b0afff;
 }
 .task3-folder ul li a:hover{
     background: #6c95ea;
-    border-radius: 7px;
+    border-radius: 10px;
+    color: white;
+}
+.task3-folder ul li a:hover i{
+    color: white;
+}
+.is-active{
+    background: #6c95ea;
+    border-radius: 10px;
+    color: white !important;
+}
+.is-active i{
+    color: white !important;
 }
 .task3-note{
     flex: 4;

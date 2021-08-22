@@ -1,14 +1,14 @@
 .modal{
-    padding: 10px;
-    background-color: #3f7cff;
-    border-radius: 10px;
+    padding: 15px;
+    background-color: #4e4cac;
+    border-radius: 15px;
     width: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
     color: white;
     transform: translate(-50%,-50%);
-    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+    box-shadow: rgb(140 137 255) 0px 8px 24px;
     display: none;
 }
 .modal.active{
@@ -31,17 +31,23 @@
 }
 .modal h3{
     font-size: 2.5rem;
-    font-weight: 100;
+    font-weight: 500;
 }
 .modal-content{
     display: grid;
     grid-template-columns: 15% 85%;
     padding: 5px 0;
     margin-top: 5px;
+    align-items: baseline;
 }
 .modal-content p{
-    background: white;
-    color: black;
-    padding: 5px;
-    border-radius: 5px;
+    background: #615eda;
+    color: white;
+    padding: 10px;
+    border-radius: 11px;
+    font-size: 1.1rem;
+}
+.modal-content span{
+    font-weight: 500;
+    font-size: 1.2rem;
 }

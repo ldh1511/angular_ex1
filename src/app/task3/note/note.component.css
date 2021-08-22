@@ -13,11 +13,12 @@
     margin-left: 15px;
     width: 100px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 10px;
     font-family: inherit;
     font-weight: 600;
-    background: white;
-    box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
+    background: #6054b6;
+    color: white;
+    box-shadow: rgb(202 202 202) 0px 4px 12px;
     transition: all .2s;
     display: block;
     text-decoration: none;
@@ -27,8 +28,7 @@
     color: white;
 }
 .task3-content{
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 50% 50%;
     margin-top: 25px;
 }

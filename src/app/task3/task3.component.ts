@@ -15,6 +15,7 @@ export class Task3Component implements OnInit, OnDestroy {
   ctg = [];
   isModalOpen = false;
   infoModal = null;
+  title=null;
   private getStateFromChild: Subscription;
   private getInfoFromChild: Subscription;
   constructor(
@@ -35,6 +36,7 @@ export class Task3Component implements OnInit, OnDestroy {
     this.apiService.getCategory().subscribe(category => {
       this.ctg = [category];
       this.ctg=this.ctg[0];
+      this.title=this.ctg[0].categoryName;
       this.router.navigate(['/task3',`${this.ctg[0].categoryId}`])
     });
   }
@@ -45,7 +47,8 @@ export class Task3Component implements OnInit, OnDestroy {
   receiveStateModal($event){
     this.isModalOpen=$event
   }
-  handleCloseModal(){
+  handleCloseModal(name){
     this.isModalOpen =false;
+    this.title=name;
   }
 }
