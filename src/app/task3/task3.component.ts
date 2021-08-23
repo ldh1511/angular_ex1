@@ -37,7 +37,6 @@ export class Task3Component implements OnInit, OnDestroy {
       this.ctg = [category];
       this.ctg=this.ctg[0];
       this.title=this.ctg[0].categoryName;
-      localStorage.setItem('data_task3',JSON.stringify(this.ctg))
       this.router.navigate(['/task3',`${this.ctg[0].categoryId}`])
     });
   }
