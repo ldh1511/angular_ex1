@@ -63,10 +63,6 @@ export class FlashCardComponent implements OnInit {
     let slides = document.getElementsByClassName("carousel-item");
     if (n > slides.length) { this.slideIndex = 1 }
     if (n < 1) { this.slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
-      //slides[i].className = "carousel-item hidden";
-    }
-    //slides[this.slideIndex - 1].className = "carousel-item active";
     this.curId = Number(slides[this.slideIndex - 1].children[0].id);
   }
   handleRemember() {
@@ -117,7 +113,6 @@ export class FlashCardComponent implements OnInit {
     return 0.5 - Math.random();
   }  
   handleRandomCard(){
-    var i;
     this.filterData=this.filterData.sort(this.func);
     this.moveWidth=0;
   }
