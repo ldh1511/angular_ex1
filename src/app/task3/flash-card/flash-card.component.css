@@ -44,6 +44,54 @@
 .carousel-count span{
     color: red;
 }
+.carousel-card{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+.carousel-front{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 9px;
+    transition: .2s;
+    z-index: 2;
+}
+.carousel-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #4e4cac;
+    border-radius: 9px;
+    transition: .2s;
+    opacity: 0;
+    visibility: hidden;
+    transform: rotateY(-180deg);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.carousel-back p{
+    font-size:2.5rem;
+    width: 89%;
+    text-align: center;
+}
+.carousel-card.active div:nth-child(1){
+    transform: rotateY(180deg);
+    opacity: 0;
+    visibility: hidden;
+}
+.carousel-card.active div:nth-child(2){
+    transform: rotateY(0deg);
+    opacity: 1;
+    visibility: visible;
+}
+
 select{
     margin: 15px 0;
     border: none;
@@ -82,9 +130,18 @@ select{
     justify-content: center;
     margin-right: 15px;
     cursor: pointer;
+    transition: all .2s;
 }
 .tick{
     color: green;
+}
+.tick:hover{
+    background: white !important;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.untick:hover{
+    background: white !important;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .untick{
     color: red;
@@ -128,6 +185,10 @@ select{
     justify-content: center;
     border-radius: 10px;
     cursor: pointer;
+    transition: all .2s;
+}
+.icon i:hover{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .flash-card-box{
     display: flex;
@@ -135,4 +196,8 @@ select{
     height: 400px;
     position: relative;
     transition: all .2s;
+}
+.remember{
+    color: #29f729;
+    background: #109610 !important;
 }

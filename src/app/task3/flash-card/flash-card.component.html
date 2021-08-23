@@ -14,11 +14,23 @@
         <div class="flash-card-container">
             <div *ngIf="filterData.length>0" class="flash-card-box" [style.transform]="'translate('+moveWidth+'px)'">
                 <div class="carousel-item" *ngFor="let item of filterData; let i=index">
-                    <div class="carousel-count" id="{{item.id}}">
-                        {{i+1}}/{{filterData.length}}
-                        <span>từ</span>
+                    <div 
+                    class="carousel-card" 
+                    (click)="handleFlipCard()" 
+                    [class.active]="stateFlashCard===true"
+                    id="{{item.id}}"
+                    >
+                        <div class="carousel-front">
+                            <div class="carousel-count">
+                                {{i+1}}/{{filterData.length}}
+                                <span>từ</span>
+                            </div>
+                            <p>{{item.name}}</p>
+                        </div>
+                        <div class="carousel-back">
+                            <p>{{item.mean}}</p>
+                        </div>
                     </div>
-                    <p>{{item.name}}</p>
                 </div>
             </div>
             <div *ngIf="filterData.length===0">
@@ -35,13 +47,18 @@
         </div>
         <div class="flash-card-btn">
             <button>
-                <i class="fas fa-check tick" (click)="handleRemember()"></i>
+                <i 
+                class="fas fa-check tick" 
+                (click)="handleRemember()" 
+                [class.remember]="isRemember===true"
+                ></i>
                 Đã nhớ
             </button>
             <button>
                 <i class="fas fa-times untick" (click)="handleUnRemember()"></i>
                 Chưa nhớ
             </button>
+            
         </div>
     </div>
 
