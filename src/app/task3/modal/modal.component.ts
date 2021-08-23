@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Task3Service } from '../service/task3.service';
 
@@ -7,7 +7,7 @@ import { Task3Service } from '../service/task3.service';
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css']
 })
-export class ModalComponent implements OnInit {
+export class ModalComponent implements OnInit, OnDestroy {
   @Input() isModalOpen: boolean;
   private getInfoFromChild: Subscription;
   data={name:'', mean:'', type:''};
@@ -17,6 +17,9 @@ export class ModalComponent implements OnInit {
     this.getInfoFromChild = this.task3Service.GetInfoModal.subscribe(data => {
       this.data=data
     });
+  }
+  ngOnDestroy(){
+    this.getInfoFromChild.unsubscribe();
   }
   handleCloseModal(){
     this.isModalOpen=false;

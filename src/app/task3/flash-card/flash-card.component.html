@@ -1,1 +1,51 @@
-<p>flash-card works!</p>
+<div class="flash-card">
+    <h3>flash card</h3>
+    <div class="flash-card-main">
+        <div class="flash-card-top">
+            <select>
+                <option value="all">Tất cả</option>
+                <option value="remember">Đã nhớ</option>
+                <option value="unremember">Chưa nhớ</option>
+            </select>
+        </div>
+        <div class="flash-card-container">
+            <div class="carousel-item">
+                <div class="carousel-count">1/10 <span>từ</span></div>
+                <p>purpose</p>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-count">1/10 <span>từ</span></div>
+                <p>purpose</p>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-count">2/10 <span>từ</span></div>
+                <p>purpose</p>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-count">3/10 <span>từ</span></div>
+                <p>purpose</p>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-count">4/10 <span>từ</span></div>
+                <p>purpose</p>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-count">5/10 <span>từ</span></div>
+                <p>purpose</p>
+            </div>
+            <a class="prev" (click)="moveSlide(-1)">&#10094;</a>
+            <a class="next" (click)="moveSlide(1)">&#10095;</a>
+        </div>
+        <div class="flash-card-btn">
+            <button>
+                <i class="fas fa-check tick"></i>
+                Đã nhớ
+            </button>
+            <button>
+                <i class="fas fa-times untick"></i>
+                Chưa nhớ
+            </button>
+        </div>
+    </div>
+
+</div>

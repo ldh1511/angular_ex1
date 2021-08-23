@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../service/apiService';
+import { Task3Service } from '../service/task3.service';
 
 @Component({
   selector: 'app-note',
@@ -13,7 +14,8 @@ export class NoteComponent implements OnInit {
   content='test';
   constructor(
     private route: ActivatedRoute,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private task3Service: Task3Service
     ) { }
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -27,5 +29,8 @@ export class NoteComponent implements OnInit {
       this.data=[note];
       this.data=this.data[0];
     });
+  }
+  shareDataToFlashCard(){
+    this.task3Service.notifyCategoryItems(this.data);
   }
 }
