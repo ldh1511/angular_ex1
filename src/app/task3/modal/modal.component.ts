@@ -14,7 +14,7 @@ export class ModalComponent implements OnInit {
   @Output() receiveStateModal= new EventEmitter<any>();
   constructor(private task3Service: Task3Service,) { }
   ngOnInit(): void {
-    this.getInfoFromChild = this.task3Service.InfoFromChild.subscribe(data => {
+    this.getInfoFromChild = this.task3Service.GetInfoModal.subscribe(data => {
       this.data=data
     });
   }

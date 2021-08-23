@@ -16,19 +16,19 @@ export class Task3Component implements OnInit, OnDestroy {
   isModalOpen = false;
   infoModal = null;
   title=null;
-  private getStateFromChild: Subscription;
-  private getInfoFromChild: Subscription;
+  private getState: Subscription;
+  private getInfo: Subscription;
   constructor(
     private apiService: ApiService,
     private task3Service: Task3Service,
     private router: Router
   ) { }
   ngOnInit() {
-    this.getStateFromChild = this.task3Service.StateFromChild.subscribe(datas => {
-      this.isModalOpen = datas;
+    this.getState = this.task3Service.GetStateModal.subscribe(data => {
+      this.isModalOpen = data;
     });
-    this.getInfoFromChild = this.task3Service.InfoFromChild.subscribe(datas => {
-      this.infoModal = datas;
+    this.getInfo = this.task3Service.GetInfoModal.subscribe(data => {
+      this.infoModal = data;
     });
     this.getInfoCategory();
   }
@@ -41,8 +41,8 @@ export class Task3Component implements OnInit, OnDestroy {
     });
   }
   ngOnDestroy() {
-    this.getStateFromChild.unsubscribe();
-    this.getInfoFromChild.unsubscribe();
+    this.getState.unsubscribe();
+    this.getInfo.unsubscribe();
   }
   receiveStateModal($event){
     this.isModalOpen=$event

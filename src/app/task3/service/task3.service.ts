@@ -5,10 +5,10 @@ import { Subject } from 'rxjs';
 export class Task3Service {
     private stateModal: Subject<boolean> = new Subject();
     private infoModal: Subject<any> = new Subject();
-    public get StateFromChild() {
+    public get GetStateModal() {
         return this.stateModal;
     }
-    public get InfoFromChild() {
+    public get GetInfoModal() {
         return this.infoModal;
     }
     public notifyStateModal(number) {
