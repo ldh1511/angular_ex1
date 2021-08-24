@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../service/apiService';
 @Component({
@@ -9,19 +9,20 @@ import { ApiService } from '../service/apiService';
 export class FillComponent implements OnInit {
   idCategory = null;
   data = [];
-  totalWorld=null;
+  totalWorld = null;
   curWord = null;
   question = null;
   stateModal = false;
   isFinished = false;
   valueInputRange = 200;
-  totalCorrect=0;
+  totalCorrect = 0;
+  minus=null;
   constructor(
     private route: ActivatedRoute,
     private apiService: ApiService,
   ) {
   }
-
+  @ViewChild('useThisTemplateVar') elRef: ElementRef;
   ngOnInit(): void {
     this.route.paramMap.subscribe(param => {
       const id = Number(param.get('id'));
@@ -41,7 +42,7 @@ export class FillComponent implements OnInit {
       this.data = check;
     }
     this.curWord = this.data[0];
-    this.totalWorld=this.data.length;
+    this.totalWorld = this.data.length;
     this.question = this.createQuestion(this.curWord.name);
     this.handleTime(this.data);
   }
@@ -86,7 +87,7 @@ export class FillComponent implements OnInit {
     arrKeyItem = Array.from(new Set(arrKeyItem))
     return arrKeyItem;
   }
-  handleClickKeyItem(item) {
+  handleClickKeyItem(item, e) {
     let check = this.question.r.filter(word => word === item);
     if (check.length >= 1) {
       let index = this.getAllIndexes(this.question.r, check[0]);
@@ -96,9 +97,15 @@ export class FillComponent implements OnInit {
         })
       })
       let checkFilled = this.question.q.filter(word => word === '_');
-      if(checkFilled.length===0){
-        this.totalCorrect+=1;
+      if (checkFilled.length === 0 && this.isFinished === false) {
+        this.totalCorrect += 1;
       }
+    }
+    else {
+      e.target.className = 'keyboard-item selected';
+      setTimeout(() => {
+        e.target.className = 'keyboard-item';
+      }, 300)
     }
   }
   getAllIndexes(arr, val) {
@@ -112,26 +119,37 @@ export class FillComponent implements OnInit {
   }
   handleTime = (data) => {
     var index = 1;
-    let timer=setInterval(() => {
-      if (index < data.length) {
+    let timer = setInterval(() => {
+      if (index < data.length && this.isFinished === false) {
         this.question = this.createQuestion(this.data[index].name);
         this.curWord = this.data[index];
       }
-      else{
-        this.stateModal=true;
-        this.isFinished=false;
+      else {
+        this.stateModal = true;
+        this.isFinished = true;
         clearInterval(timer);
       }
       index++;
-    }, 2000);
+    }, 15000);
   }
-  receiveStateModal($event){
-    this.stateModal=$event
+  receiveStateModal($event) {
+    this.stateModal = $event
   }
-  receiveStatePlay($event){
-    this.isFinished=$event;
+  receiveStatePlay($event) {
+    this.isFinished = $event;
     this.curWord = this.data[0];
-    this.totalCorrect=0;
+    this.totalCorrect = 0;
+    this.question = this.createQuestion(this.curWord.name);
     this.handleTime(this.data);
   }
+  // startTimer(duration) {
+  //   let timer = duration, seconds;
+  //   setInterval(()=> {
+  //     seconds = Number(timer % 60);
+  //     this.minus=seconds
+  //     if (--timer < 0 && this.isFinished === false) {
+  //       timer = duration;
+  //     }
+  //   }, 1000);
+  //}
 }

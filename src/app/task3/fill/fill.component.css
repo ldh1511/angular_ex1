@@ -62,3 +62,6 @@
 .keyboard-item:hover{
     background: #6c95ea;
 }
+.keyboard-item.selected{
+    background: grey;
+}

@@ -1,8 +1,8 @@
 <div class="fill-box">
     <h3 class="title">Fill Word</h3>
-    <div class="time-bar">
+    <!-- <div class="time-bar">
         <input type="range" min="0" max="200" [value]="valueInputRange">
-    </div>
+    </div> -->
     <div class="vocab">
         <p *ngFor="let item of question.q">
             {{item}}
@@ -13,7 +13,9 @@
         <div 
             class="keyboard-item" 
             *ngFor="let item of question.keyboard"
-            (click)="handleClickKeyItem(item)"
+            (click)="handleClickKeyItem(item, $event)"
+            id="{{item}}"
+            #useThisTemplateVar
         >
             {{item}}
         </div>
@@ -25,6 +27,7 @@
         (receiveStatePlay)="receiveStatePlay($event)"
         [totalCorrect]="totalCorrect"
         [totalWorld]="totalWorld"
+        [idCategory]="idCategory"
     >
     </app-fill-modal>
 </div>
