@@ -20,11 +20,11 @@ export class FillComponent implements OnInit {
   checkCorrect = false;
   second = 15;
   interval = null;
+  index=0;
   constructor(
     private route: ActivatedRoute,
     private apiService: ApiService,
-  ) {
-  }
+  ) {}
   @ViewChild('useThisTemplateVar') elRef: ElementRef;
   ngOnInit(): void {
     this.route.paramMap.subscribe(param => {
@@ -39,10 +39,12 @@ export class FillComponent implements OnInit {
       this.apiService.getNote(this.idCategory).subscribe(data => {
         this.data = [data];
         this.data = this.data[0];
+        this.data=this.data.sort(() => 0.5 - Math.random());
       })
     }
     else {
       this.data = check;
+      this.data=this.data.sort(() => 0.5 - Math.random());
     }
     this.curWord = this.data[0];
     this.totalWorld = this.data.length;
@@ -82,7 +84,6 @@ export class FillComponent implements OnInit {
     shuffleArr.map((item, i) => {
       if (i < 3) {
         let arrItem = item.name.split('');
-
         arrKeyItem = arrKeyItem.concat(arrItem);
       }
     })
@@ -109,7 +110,7 @@ export class FillComponent implements OnInit {
       }
       if (checkArrResult && checkArrResult.length === 0) {
         this.arrResult.push(this.question.q.join(''));
-        this.totalCorrect += 1
+        this.totalCorrect += 1;
       }
     }
     if (check.length < 1 && this.isFinished === false) {
@@ -118,7 +119,6 @@ export class FillComponent implements OnInit {
         e.target.className = 'keyboard-item';
       }, 300)
     }
-    console.log(this.totalCorrect);
   }
   getAllIndexes(arr, val) {
     var indexes = [], i;
@@ -131,11 +131,13 @@ export class FillComponent implements OnInit {
   }
   handleTime = (data) => {
     var index = 1;
+    this.index=index;
     let timer = setInterval(() => {
-      if (index < data.length && this.isFinished === false) {
+      let check = this.arrResult[index-1];
+      if (index < data.length && this.isFinished === false && check!==undefined) {
         clearInterval(this.interval);
-        this.question = this.createQuestion(this.data[index].name);
-        this.curWord = this.data[index];
+        this.question = this.createQuestion(this.data[this.index].name);
+        this.curWord = this.data[this.index];
         this.checkCorrect = false;
         this.startTimer(15);
       }
@@ -146,6 +148,7 @@ export class FillComponent implements OnInit {
         clearInterval(this.interval);
       }
       index++;
+      this.index++
     }, 15000);
   }
   receiveStateModal($event) {
