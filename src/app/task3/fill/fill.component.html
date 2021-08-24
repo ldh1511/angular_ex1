@@ -1,1 +1,28 @@
-<p>fill works!</p>
+<div class="fill-box">
+    <h3 class="title">Fill Word</h3>
+    <div class="time-bar">
+        <input type="range" min="0" max="200" [value]="valueInputRange">
+    </div>
+    <div class="vocab">
+        <p *ngFor="let item of question.q">
+            {{item}}
+        </p>
+    </div>
+    <p class="mean">Nghĩa: {{curWord.mean}}</p>
+    <div class="keyboard">
+        <div 
+            class="keyboard-item" 
+            *ngFor="let item of question.keyboard"
+            (click)="handleClickKeyItem(item)"
+        >
+            {{item}}
+        </div>
+    </div>
+    <app-fill-modal 
+        [stateModal]="stateModal" 
+        [isFinished]="isFinished"
+        (receiveStateModal)="receiveStateModal($event)"
+        (receiveStatePlay)="receiveStatePlay($event)"
+    >
+    </app-fill-modal>
+</div>

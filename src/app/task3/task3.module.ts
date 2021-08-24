@@ -8,6 +8,7 @@ import { NoteComponent } from './note/note.component';
 import { ModalComponent } from './modal/modal.component';
 import { FlashCardComponent } from './flash-card/flash-card.component';
 import { FillComponent } from './fill/fill.component';
+import { FillModalComponent } from './fill-modal/fill-modal.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FillComponent } from './fill/fill.component';
     NoteComponent,
     ModalComponent,
     FlashCardComponent,
-    FillComponent
+    FillComponent,
+    FillModalComponent
   ],
   imports: [
     CommonModule,

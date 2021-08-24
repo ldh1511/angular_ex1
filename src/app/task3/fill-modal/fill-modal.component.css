@@ -1,0 +1,33 @@
+.fill-modal{
+    padding: 15px;
+    background-color: #4e4cac;
+    border-radius: 15px;
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%,-50%);
+    box-shadow: rgb(140 137 255) 0px 8px 24px;
+    display: none;
+}
+.fill-modal.active{
+    display: block;
+}
+.fill-modal p{
+    font-size: 2rem;
+}
+.fill-modal button{
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: 100;
+    color: white;
+    background: #6c95ea;
+    padding: 10px 20px;
+    margin-right: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
