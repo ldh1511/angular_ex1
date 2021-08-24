@@ -16,7 +16,10 @@ export class FillComponent implements OnInit {
   isFinished = false;
   valueInputRange = 200;
   totalCorrect = 0;
-  minus=null;
+  arrResult = [];
+  checkCorrect = false;
+  second = 15;
+  interval = null;
   constructor(
     private route: ActivatedRoute,
     private apiService: ApiService,
@@ -45,6 +48,7 @@ export class FillComponent implements OnInit {
     this.totalWorld = this.data.length;
     this.question = this.createQuestion(this.curWord.name);
     this.handleTime(this.data);
+    this.startTimer(15);
   }
   createQuestion(word) {
     let arrWord = word.split('');
@@ -97,16 +101,24 @@ export class FillComponent implements OnInit {
         })
       })
       let checkFilled = this.question.q.filter(word => word === '_');
+      let checkArrResult;
       if (checkFilled.length === 0 && this.isFinished === false) {
-        this.totalCorrect += 1;
+        let arrToString = this.question.q.join('');
+        checkArrResult = this.arrResult.filter(item => item === arrToString);
+        this.checkCorrect = true;
+      }
+      if (checkArrResult && checkArrResult.length === 0) {
+        this.arrResult.push(this.question.q.join(''));
+        this.totalCorrect += 1
       }
     }
-    else {
+    if (check.length < 1 && this.isFinished === false) {
       e.target.className = 'keyboard-item selected';
       setTimeout(() => {
         e.target.className = 'keyboard-item';
       }, 300)
     }
+    console.log(this.totalCorrect);
   }
   getAllIndexes(arr, val) {
     var indexes = [], i;
@@ -121,13 +133,17 @@ export class FillComponent implements OnInit {
     var index = 1;
     let timer = setInterval(() => {
       if (index < data.length && this.isFinished === false) {
+        clearInterval(this.interval);
         this.question = this.createQuestion(this.data[index].name);
         this.curWord = this.data[index];
+        this.checkCorrect = false;
+        this.startTimer(15);
       }
       else {
         this.stateModal = true;
         this.isFinished = true;
         clearInterval(timer);
+        clearInterval(this.interval);
       }
       index++;
     }, 15000);
@@ -139,17 +155,23 @@ export class FillComponent implements OnInit {
     this.isFinished = $event;
     this.curWord = this.data[0];
     this.totalCorrect = 0;
+    this.arrResult = [];
+    this.checkCorrect = false;
+    this.second = 15;
     this.question = this.createQuestion(this.curWord.name);
     this.handleTime(this.data);
+    this.startTimer(15);
   }
-  // startTimer(duration) {
-  //   let timer = duration, seconds;
-  //   setInterval(()=> {
-  //     seconds = Number(timer % 60);
-  //     this.minus=seconds
-  //     if (--timer < 0 && this.isFinished === false) {
-  //       timer = duration;
-  //     }
-  //   }, 1000);
-  //}
+  startTimer(duration) {
+    let timer = duration, seconds;
+    if (this.second >= 0 && this.isFinished === false) {
+      this.interval = setInterval(() => {
+        seconds = Number(timer % 60);
+        this.second = seconds
+        if (--timer < 0) {
+          timer = duration;
+        }
+      }, 900);
+    }
+  }
 }

@@ -1,6 +1,8 @@
 <div class="fill-modal" [class]="stateModal===true?'fill-modal active':'fill-modal'">
-    <p>Tổng số câu đúng:</p>
-    <p>{{totalCorrect}}/{{totalWorld}}</p>
-    <button (click)="handlePlayAgain()">Chơi lại</button>
-    <button (click)="handleBack()">Trang chủ</button>
+    <div class="modal-box">
+        <p>Tổng số câu đúng:</p>
+        <p>{{totalCorrect}}/{{totalWorld}}</p>
+        <button (click)="handlePlayAgain()">Chơi lại</button>
+        <button (click)="handleBack()">Trang chủ</button>
+    </div>
 </div>

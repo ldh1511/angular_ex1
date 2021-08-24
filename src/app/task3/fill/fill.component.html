@@ -1,8 +1,8 @@
 <div class="fill-box">
     <h3 class="title">Fill Word</h3>
-    <!-- <div class="time-bar">
-        <input type="range" min="0" max="200" [value]="valueInputRange">
-    </div> -->
+    <div class="time-bar">
+        {{second}}
+    </div>
     <div class="vocab">
         <p *ngFor="let item of question.q">
             {{item}}
@@ -19,6 +19,10 @@
         >
             {{item}}
         </div>
+    </div>
+    <div *ngIf="checkCorrect===true" class="correct">
+        <i class="fas fa-check"></i>
+        Chính xác
     </div>
     <app-fill-modal 
         [stateModal]="stateModal" 

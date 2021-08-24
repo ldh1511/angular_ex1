@@ -13,12 +13,12 @@
 }
 .time-bar{
     background: white;
-    padding: 10px;
     width: 500px;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 2rem;
 }
 .time-bar input{
     width: 100%;
@@ -64,4 +64,15 @@
 }
 .keyboard-item.selected{
     background: grey;
+}
+.correct{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #2a852a;
+}
+.correct i{
+    color: #3bd23b;
+    font-size: 3rem;
 }
