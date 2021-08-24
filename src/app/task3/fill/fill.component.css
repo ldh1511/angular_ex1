@@ -53,6 +53,7 @@
     text-align: center;
     min-width: 100px;
     max-width: 100px;
+    min-height: 65px;
     color: white;
     font-size: 1.6rem;
     border-radius: 10px;
