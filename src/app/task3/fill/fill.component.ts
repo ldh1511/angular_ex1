@@ -9,6 +9,7 @@ import { ApiService } from '../service/apiService';
 export class FillComponent implements OnInit {
   idCategory = null;
   data = [];
+  totalWorld=null;
   curWord = null;
   question = null;
   stateModal = false;
@@ -40,6 +41,7 @@ export class FillComponent implements OnInit {
       this.data = check;
     }
     this.curWord = this.data[0];
+    this.totalWorld=this.data.length;
     this.question = this.createQuestion(this.curWord.name);
     this.handleTime(this.data);
   }
@@ -129,6 +131,7 @@ export class FillComponent implements OnInit {
   receiveStatePlay($event){
     this.isFinished=$event;
     this.curWord = this.data[0];
+    this.totalCorrect=0;
     this.handleTime(this.data);
   }
 }

@@ -8,6 +8,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class FillModalComponent implements OnInit {
   @Input() stateModal: boolean;
   @Input() isFinished: boolean;
+  @Input() totalCorrect: any;
+  @Input() totalWorld: any;
   @Output() receiveStateModal = new EventEmitter<boolean>();
   @Output() receiveStatePlay = new EventEmitter<boolean>();
   constructor() { }
