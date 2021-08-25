@@ -1,0 +1,18 @@
+<div class="banner-container">
+    <div class="banner" [style.transform]="'translate('+moveWidth+'px)'">
+        <div class="carousel-item">
+            this is banner 01
+        </div>
+        <div class="carousel-item">
+            this is banner 02
+        </div>
+        <div class="carousel-item">
+            this is banner 03
+        </div>
+    </div>
+    <div class="carousel-dot">
+        <span class="dot-item active" (click)="activeSlide(1)"></span>
+        <span class="dot-item" (click)="activeSlide(2)"></span>
+        <span class="dot-item" (click)="activeSlide(3)"></span>
+    </div>
+</div>
