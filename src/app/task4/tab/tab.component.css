@@ -26,7 +26,7 @@
     border: none;
     border-radius: 5px;
     background: white;
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: #929292;
 }
 .items-button button:last-child{
@@ -34,4 +34,8 @@
 }
 .active{
     color: red !important;
+}
+.custom{
+    background: #181818 !important;
+    box-shadow: rgb(16 16 16) 0px 4px 12px
 }

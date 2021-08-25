@@ -2,8 +2,20 @@
     <div class="items-top">
         <h4>{{this.name}}</h4>
         <div class="items-button" *ngIf="type!=='artist'">
-            <button [class.active]="left==true" (click)="prevSlide(-1)">&#10094;</button>
-            <button [class.active]="right==true" (click)="nextSlide(1)">&#10095;</button>
+            <button 
+                [class.active]="left==true" 
+                (click)="prevSlide(-1)"
+                [class.custom]="type==='recommend' || type==='lastest'"
+            >
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button 
+                [class.active]="right==true" 
+                (click)="nextSlide(1)"
+                [class.custom]="type==='recommend' || type==='lastest'"
+            >
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
     </div>
     <div class="items-box" *ngIf="type==='artist'">

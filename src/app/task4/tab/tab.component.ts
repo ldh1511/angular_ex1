@@ -44,6 +44,9 @@ export class TabComponent implements OnInit {
       case 'recommend':
         this.widthItem=this.myIdentifier.nativeElement.children[0].offsetWidth;
         break;
+      case 'lastest':
+        this.widthItem=this.myIdentifier.nativeElement.children[0].offsetWidth;
+        break;
       default:
         break
     }
