@@ -1,60 +1,22 @@
 <div class="items">
-    <h4>Nghệ sĩ</h4>
-    <div class="items-box">
-        <div class="item">
-            <div class="item-img">
-                <img src="https://vcdn-giaitri.vnecdn.net/2021/08/09/Billie-Eilish-Happier-2911-1628481422.jpg">
-            </div>
-            <div class="item-content">
-                <h5>Billie Eilish</h5>
-                <p>Pop Music</p>
-            </div>
+    <div class="items-top">
+        <h4>{{this.name}}</h4>
+        <div class="items-button" *ngIf="type!=='artist'">
+            <button [class.active]="left==true" (click)="prevSlide(-1)">&#10094;</button>
+            <button [class.active]="right==true" (click)="nextSlide(1)">&#10095;</button>
         </div>
-        <div class="item">
-            <div class="item-img">
-                <img src="https://vcdn-giaitri.vnecdn.net/2021/08/09/Billie-Eilish-Happier-2911-1628481422.jpg">
-            </div>
-            <div class="item-content">
-                <h5>Billie Eilish</h5>
-                <p>Pop Music</p>
-            </div>
-        </div>
-        <div class="item">
-            <div class="item-img">
-                <img src="https://vcdn-giaitri.vnecdn.net/2021/08/09/Billie-Eilish-Happier-2911-1628481422.jpg">
-            </div>
-            <div class="item-content">
-                <h5>Billie Eilish</h5>
-                <p>Pop Music</p>
-            </div>
-        </div>
-        <div class="item">
-            <div class="item-img">
-                <img src="https://vcdn-giaitri.vnecdn.net/2021/08/09/Billie-Eilish-Happier-2911-1628481422.jpg">
-            </div>
-            <div class="item-content">
-                <h5>Billie Eilish</h5>
-                <p>Pop Music</p>
-            </div>
-        </div>
-        <div class="item">
-            <div class="item-img">
-                <img src="https://vcdn-giaitri.vnecdn.net/2021/08/09/Billie-Eilish-Happier-2911-1628481422.jpg">
-            </div>
-            <div class="item-content">
-                <h5>Billie Eilish</h5>
-                <p>Pop Music</p>
-            </div>
-        </div>
-        <div class="item">
-            <div class="item-img">
-                <img src="https://vcdn-giaitri.vnecdn.net/2021/08/09/Billie-Eilish-Happier-2911-1628481422.jpg">
-            </div>
-            <div class="item-content">
-                <h5>Billie Eilish</h5>
-                <p>Pop Music</p>
-            </div>
-        </div>
+    </div>
+    <div class="items-box" *ngIf="type==='artist'">
+        <app-item-circle *ngFor="let item of data"></app-item-circle>
 
+    </div>
+    <div class="items-box" *ngIf="type==='album'" [style.transform]="'translate('+moveWidth+'px)'" #myIdentifier>
+        <app-item-square class="carousel-item" *ngFor="let item of data"></app-item-square>
+    </div>
+    <div class="items-box" *ngIf="type==='recommend'" [style.transform]="'translate('+moveWidth+'px)'" #myIdentifier>
+        <app-item-big-square class="carousel-item" *ngFor="let item of data"></app-item-big-square>
+    </div>
+    <div class="items-box" *ngIf="type==='lastest'" [style.transform]="'translate('+moveWidth+'px)'" #myIdentifier>
+        <app-item-big-square class="carousel-item" *ngFor="let item of data"></app-item-big-square>
     </div>
 </div>

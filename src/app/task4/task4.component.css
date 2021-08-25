@@ -7,12 +7,12 @@
 }
 .task4-menu{
     background: #121212;
-    color: #90949e;
-    height: 100vh;
+    color: #bac0cd;
+    height: 100%;
 }
 .task4-main{
     background: #181818;
-    color: #7d8189;
+    color: #bac0cd;
 }
 .logo{
     color: white;
@@ -97,7 +97,7 @@
 .header-right button:last-child{
     margin-right: 0px;
     background: none;
-    color: inherit;
+    color: #929292;
     padding: 0;
     display: flex;
     align-items: center;
@@ -107,7 +107,7 @@
 }
 .header-right button:first-child{
     background: none;
-    color: #90949e;
+    color: #929292;
 }
 .header-right button:first-child i{
     margin-right: 5px;
@@ -132,3 +132,7 @@
 .icon i{
     color: #f95043;
 }
+.menu-box{
+    position: fixed;
+}
+

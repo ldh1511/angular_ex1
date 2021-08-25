@@ -1,0 +1,23 @@
+<div class="voice-chart">
+    <h4>Voice chart</h4>
+    <div class="voice-chart--main">
+        <div class="voice-chart--list">
+            <div class="voice-chart--item" *ngFor="let item of defaultData" [class.active]="item===0">
+                <span>{{item+1}}</span>
+                <div class="chart-img">
+                    <img src="https://i.pinimg.com/564x/45/63/03/456303722e609498bbd91c20e9a48096.jpg">
+                    <div class="chart-img--content">
+                        <h5>Best friend</h5>
+                        <p>Kananishino</p>
+                    </div>
+                </div>
+                <p class="chart-view">564 lượt xem</p>
+            </div>
+            
+        </div>
+        <div class="right">
+            <img src="https://i.pinimg.com/564x/45/63/03/456303722e609498bbd91c20e9a48096.jpg">
+        </div>
+    </div>
+
+</div>

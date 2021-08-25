@@ -22,7 +22,7 @@
                 <li>
                     <div class="li-top">
                         <i class="far fa-heart"></i>
-                        <p>yêu thích nhất</p> 
+                        <p>yêu thích nhất</p>
                     </div>
                 </li>
                 <li>
@@ -34,13 +34,13 @@
                 <li>
                     <div class="li-top">
                         <i class="far fa-clock"></i>
-                        <p>lịch sử</p> 
+                        <p>lịch sử</p>
                     </div>
                 </li>
                 <li>
                     <div class="li-top">
                         <i class="far fa-cog"></i>
-                        <p>seeting</p>
+                        <p>setting</p>
                     </div>
                 </li>
                 <li>
@@ -73,6 +73,10 @@
             </div>
         </nav>
         <app-banner></app-banner>
-        <app-tab></app-tab>
+        <app-tab [type]="type[0]" [data]="artistData"></app-tab>
+        <app-tab [type]="type[1]" [data]="chartData"></app-tab>
+        <app-tab-chart></app-tab-chart>
+        <app-tab [type]="type[2]" [data]="recommendData"></app-tab>
+        <app-tab [type]="type[3]" [data]="lastestData"></app-tab>
     </div>
 </div>

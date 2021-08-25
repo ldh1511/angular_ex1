@@ -1,0 +1,90 @@
+.voice-chart{
+    margin: 50px 30px 50px 50px;
+}
+.voice-chart h4{
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.voice-chart--main{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+}
+.voice-chart--list{
+    height: 320px;
+    overflow-y: scroll;
+}
+.voice-chart--item{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    padding-right: 70px;
+    transition: all .2s;
+    padding-left: 10px;
+}
+.voice-chart--item.active{
+    background: #333333;
+}
+.voice-chart--item:hover{
+    background: #333333;
+    cursor: pointer;
+}
+.voice-chart--item span{
+    color: #e6e6e6;
+}
+.chart-img{
+    display: flex;
+}
+.chart-img img{
+    width: 130px;
+    height: 70px;
+    border-radius: 5px;
+}
+.chart-img--content{
+    margin-left: 20px;
+    padding-top: 10px;
+}
+.chart-img--content h5{
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.chart-img--content p{
+    color: #bac0cd;
+    font-size: 0.95rem;
+}
+.right{
+    margin-left: 50px;
+    height: 320px;
+}
+.right img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.chart-view{
+    padding-top: 10px;
+}
+.voice-chart--list::-webkit-scrollbar {
+    width: 5px;
+}
+  
+  /* Track */
+.voice-chart--list::-webkit-scrollbar-track {
+    background: #181818; 
+}
+   
+  /* Handle */
+.voice-chart--list::-webkit-scrollbar-thumb {
+    background: #f95043; 
+    border-radius: 30px;
+}
+  
+  /* Handle on hover */
+.voice-chart--list::-webkit-scrollbar-thumb:hover {
+    background: #f95043; 
+}
