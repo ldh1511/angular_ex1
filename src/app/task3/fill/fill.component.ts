@@ -97,11 +97,10 @@ export class FillComponent implements OnInit {
   handleClickKeyItem(item, e) {
     let check = this.question.r.filter(word => word === item);
     if (check.length >= 1) {
-      let index = this.getAllIndexes(this.question.r, check[0]);
+      let index = this.getAllIndexes(this.question.r,this.question.q, check[0]);
+      console.log(index);
       this.question.q.map((item, i) => {
-        index.map(index => {
-          if (index === i) { this.question.q[i] = check[0] }
-        })
+        if (index[0] === i) { this.question.q[i] = check[0] }
       })
       let checkFilled = this.question.q.filter(word => word === '_');
       let checkArrResult;
@@ -123,10 +122,10 @@ export class FillComponent implements OnInit {
       }, 300)
     }
   }
-  getAllIndexes(arr, val) {
+  getAllIndexes(arr1, arr2, val) {
     var indexes = [], i;
-    for (i = 0; i < arr.length; i++) {
-      if (arr[i] === val) {
+    for (i = 0; i < arr1.length; i++) {
+      if (arr1[i] === val && arr2[i]==='_') {
         indexes.push(i);
       }
     }
@@ -146,7 +145,7 @@ export class FillComponent implements OnInit {
         this.index = 0;
         clearInterval(this.interval);
         clearTimeout(this.timer);
-      },3000)
+      }, 3000)
     }
   }
   handleNextQuestion() {
