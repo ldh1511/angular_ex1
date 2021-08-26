@@ -1,0 +1,79 @@
+.modal-box{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0,0,0,0.5);;
+    display: none;
+    top: 0;
+    left: 0;
+}
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-60%, -50%);
+    background: #282828;
+    color: #929292;
+    padding: 35px;
+    border-radius: 15px;
+    text-align: center;
+    width: 45%;
+}
+.modal-box.active{
+    display: block;
+}
+.modal-header{
+    position: relative;
+    margin-bottom: 45px;
+}
+.modal-header i{
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: white;
+}
+.modal p{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 5px;
+}
+.modal span{
+    color: white;
+    margin-bottom: 25px;
+    display: block;
+}
+.modal-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+}
+.modal-input label{
+    text-align: left;
+    color: #a8a8a8;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.modal-input input{
+    background: #e6e6e6;
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: inherit;
+}
+.modal button{
+    display: block;
+    float: right;
+    border: none;
+    outline: none;
+    background: #f95043;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-top: 15px;
+}

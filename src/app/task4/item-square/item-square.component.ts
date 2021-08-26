@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-item-square',
@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./item-square.component.css']
 })
 export class ItemSquareComponent implements OnInit {
-
+  @Input() data: any;
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.data)
   }
 
 }

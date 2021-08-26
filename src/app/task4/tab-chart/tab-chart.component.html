@@ -1,22 +1,28 @@
 <div class="voice-chart">
     <h4>Voice chart</h4>
     <div class="voice-chart--main">
-        <div class="voice-chart--list">
-            <div class="voice-chart--item" *ngFor="let item of defaultData" [class.active]="item===0">
-                <span>{{item+1}}</span>
+        <div class="voice-chart--list" #myIdentifier>
+            <div 
+            class="voice-chart--item" 
+            *ngFor="let item of defaultData" 
+            [class.active]="item.id===0"
+            (click)="handleSelectItem(item.id)"
+            >
+                <span>{{item.id+1}},</span>
                 <div class="chart-img">
-                    <img src="https://i.pinimg.com/564x/45/63/03/456303722e609498bbd91c20e9a48096.jpg">
+                    <div *ngIf="item.id===3" class="up-icon"></div>
+                    <img src="{{item.img}}">
                     <div class="chart-img--content">
-                        <h5>Best friend</h5>
-                        <p>Kananishino</p>
+                        <h5>{{item.name}}</h5>
+                        <p>{{item.artist}}</p>
                     </div>
                 </div>
-                <p class="chart-view">564 lượt xem</p>
+                <p class="chart-view">{{item.view}} lượt xem</p>
             </div>
             
         </div>
         <div class="right">
-            <img src="https://i.pinimg.com/564x/45/63/03/456303722e609498bbd91c20e9a48096.jpg">
+            <img src="{{itemSelected.img}}">
         </div>
     </div>
 

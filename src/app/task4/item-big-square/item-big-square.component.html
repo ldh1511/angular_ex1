@@ -1,11 +1,13 @@
 <div class="item">
     <div class="item-img">
-        <img src="https://i.pinimg.com/564x/60/5d/81/605d81b6de3b6c17b4f3041576e42b5b.jpg">
-        <span class="icon">Khó</span>
+        <img src="{{data.img}}">
+        <span class="icon custom-3" *ngIf="data.type===3">Khó</span>
+        <span class="icon custom-2" *ngIf="data.type===2">T.bình</span>
+        <span class="icon custom-1" *ngIf="data.type===1">Dễ</span>
     </div>
     <div class="item-content">
-        <h5>Billie Eilish</h5>
-        <p>Pop Music</p>
-        <span>564 lượt xem</span>
+        <h5>{{data.name}}</h5>
+        <p>{{data.artist}}</p>
+        <span>{{data.view}} lượt xem</span>
     </div>
 </div>

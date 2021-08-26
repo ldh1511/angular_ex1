@@ -27,7 +27,7 @@
                 </li>
                 <li>
                     <div class="li-top">
-                        <i class="far fa-tags"></i>
+                        <i class="far fa-bookmark"></i>
                         <p>my playlist</p>
                     </div>
                 </li>
@@ -63,46 +63,28 @@
                     <i class="far fa-filter"></i>
                     Bộ lọc
                 </button>
-                <button>
+                <button (click)="handleClickModal()">
                     <div class="icon">
                         <i class="fas fa-arrow-up"></i>
                     </div>
                     Gửi yêu cầu
                 </button>
-                <button><i class="far fa-user-circle"></i></button>
+                <button><img src="../../assets/user.png" alt="image"></button>
             </div>
         </nav>
         <app-banner></app-banner>
         <app-tab [type]="type[0]" [data]="artistData"></app-tab>
-        <app-tab [type]="type[1]" [data]="chartData"></app-tab>
+        <app-tab [type]="type[1]" [data]="albumData"></app-tab>
         <app-tab-chart></app-tab-chart>
         <app-tab [type]="type[2]" [data]="recommendData"></app-tab>
         <app-tab [type]="type[3]" [data]="lastestData"></app-tab>
         <div class="popular-box">
             <h4>Popuplar Tag</h4>
             <div class="popular-items">
-                <div class="popular-item">anime</div>
-                <div class="popular-item">anime</div>
-                <div class="popular-item">anime</div>
-                <div class="popular-item">anime</div>
-                <div class="popular-item">anime</div>
-                <div class="popular-item">anime</div>
-                <div class="popular-item">anime</div>
-                <div class="popular-item">anime</div>
-                <div class="popular-item">anime</div>
-                <div class="popular-item">anime</div>
-                <div class="popular-item">anime</div>
-                <div class="popular-item">anime</div>
-                <div class="popular-item">anime</div>
+                <div class="popular-item" *ngFor="let item of popularTag">anime</div>
             </div>
         </div>
-        <footer>
-            <p>Copyright &copy;2016 PiPop.net .All Rights Reserved.</p>
-            <div class="footer-btn">
-                <a>Terms of service</a>
-                <a>Contact</a>
-                <a>Help</a>
-            </div>
-        </footer>
+        <app-footer></app-footer>
     </div>
+    <app-modal [stateModal]="isModalOpen" (clickModal)="receiveStateModal($event)"></app-modal>
 </div>

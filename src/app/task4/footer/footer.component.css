@@ -1,0 +1,21 @@
+footer{
+    margin-top: 100px;
+    border-top: 1px solid #282828;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    color: #e6e6e6;
+    font-size: 1.1rem;
+}
+footer p{
+    font-weight: 400;
+}
+.footer-btn a{
+    text-decoration: none;
+    padding: 0 20px;
+    cursor: pointer;
+    font-weight: 500;
+}
+.footer-btn a:last-child{
+    padding-right: 0;
+}

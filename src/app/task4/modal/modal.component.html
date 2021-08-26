@@ -1,0 +1,18 @@
+<div class="modal-box" [class]="stateModal===true?'modal-box active':'modal-box'">
+    <div class="modal" >
+        <div class="modal-header">
+            <p>Gửi yêu cầu bài hát cho Mazii Voice</p>
+            <span>Bài hát bạn yêu cầu sẽ được chúng tớ cập nhật thêm trên trang web!</span>
+            <i class="fas fa-times" (click)="handleClickModal()"></i>
+        </div>
+        <div class="modal-input">
+            <label>Tên bài hát</label>
+            <input type="text" placeholder="Nhập tên bài hát bạn yêu cầu">
+        </div>
+        <div class="modal-input">
+            <label>Tên ca sĩ</label>
+            <input type="text" placeholder="Nhập tên bài hát bạn yêu cầu">
+        </div>
+        <button (click)="handleClickModal()">Gửi yêu cầu</button>
+    </div>
+</div>

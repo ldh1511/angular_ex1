@@ -14,10 +14,26 @@ export class BannerComponent implements OnInit {
   }
   activeSlide(index) {
     this.showSlides(this.index = index);
-    if (this.moveWidth > -((this.sampleData.length - 1) * 1146.64)) {
-      this.moveWidth -= 1146.64;
+    // if (this.moveWidth > -((this.sampleData.length - 1) * 1274.05)) {
+    //   this.moveWidth -= 1274.05;
+    // }
+    // else {
+    //   this.moveWidth = 0;
+    // }
+    switch (this.index) {
+      case 1:
+        this.moveWidth = 0;
+        break;
+      case 2:
+        this.moveWidth=-1274.05;
+        break;
+      case 3:
+        this.moveWidth=-2*1274.05;
+        break;
+      default:
+        break;
     }
-    else {
+    if (this.index === 1) {
       this.moveWidth = 0;
     }
   }
@@ -29,6 +45,6 @@ export class BannerComponent implements OnInit {
     for (let i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
     }
-    dots[this.index-1].className += " active";
+    dots[this.index - 1].className += " active";
   }
 }

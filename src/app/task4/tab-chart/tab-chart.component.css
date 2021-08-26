@@ -13,7 +13,7 @@
     align-items: center;
 }
 .voice-chart--list{
-    height: 320px;
+    height: 410px;
     overflow-y: scroll;
 }
 .voice-chart--item{
@@ -37,6 +37,7 @@
 }
 .chart-img{
     display: flex;
+    position: relative;
 }
 .chart-img img{
     width: 130px;
@@ -59,7 +60,7 @@
 }
 .right{
     margin-left: 50px;
-    height: 320px;
+    height: 410px;
 }
 .right img{
     width: 100%;
@@ -68,6 +69,7 @@
 }
 .chart-view{
     padding-top: 10px;
+    font-weight: 500;
 }
 .voice-chart--list::-webkit-scrollbar {
     width: 5px;
@@ -87,4 +89,13 @@
   /* Handle on hover */
 .voice-chart--list::-webkit-scrollbar-thumb:hover {
     background: #f95043; 
+}
+.up-icon{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #5db24d;
+    left: -15%;
+    top: 15%;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }

@@ -46,7 +46,6 @@
     color: white;
 }
 .icon{
-    background: #f95043;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -54,4 +53,13 @@
     color: white;
     padding: 5px 25px;
     border-top-left-radius: 17px;
+}
+.icon.custom-3{
+    background: #f95043;
+}
+.icon.custom-2{
+    background:#ffa126;
+}
+.icon.custom-1{
+    background: #5db24d;
 }

@@ -19,16 +19,18 @@
         </div>
     </div>
     <div class="items-box" *ngIf="type==='artist'">
-        <app-item-circle *ngFor="let item of data"></app-item-circle>
-
+        <app-item-circle *ngFor="let item of data;let i=index" [data]="data[i]"></app-item-circle>
     </div>
     <div class="items-box" *ngIf="type==='album'" [style.transform]="'translate('+moveWidth+'px)'" #myIdentifier>
-        <app-item-square class="carousel-item" *ngFor="let item of data"></app-item-square>
+        <app-item-square class="carousel-item" *ngFor="let item of data;let i=index" [data]="data[i]">
+        </app-item-square>
     </div>
     <div class="items-box" *ngIf="type==='recommend'" [style.transform]="'translate('+moveWidth+'px)'" #myIdentifier>
-        <app-item-big-square class="carousel-item" *ngFor="let item of data"></app-item-big-square>
+        <app-item-big-square class="carousel-item" *ngFor="let item of data;let i=index" [data]="data[i]">
+        </app-item-big-square>
     </div>
     <div class="items-box" *ngIf="type==='lastest'" [style.transform]="'translate('+moveWidth+'px)'" #myIdentifier>
-        <app-item-big-square class="carousel-item" *ngFor="let item of data"></app-item-big-square>
+        <app-item-big-square class="carousel-item" *ngFor="let item of data;let i=index" [data]="data[i]">
+        </app-item-big-square>
     </div>
 </div>

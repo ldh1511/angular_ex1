@@ -9,6 +9,8 @@ import { ItemCircleComponent } from './item-circle/item-circle.component';
 import { ItemSquareComponent } from './item-square/item-square.component';
 import { TabChartComponent } from './tab-chart/tab-chart.component';
 import { ItemBigSquareComponent } from './item-big-square/item-big-square.component';
+import { ModalComponent } from './modal/modal.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { ItemBigSquareComponent } from './item-big-square/item-big-square.compon
     ItemCircleComponent,
     ItemSquareComponent,
     TabChartComponent,
-    ItemBigSquareComponent
+    ItemBigSquareComponent,
+    ModalComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,

@@ -111,12 +111,15 @@
     display: flex;
     align-items: center;
 }
-.header-right button:last-child i{
-    font-size: 2rem;
+.header-right button:last-child img{
+    width: 30px;
+    height: 30px;
 }
 .header-right button:first-child{
     background: none;
     color: #929292;
+    font-size: 1rem;
+    font-weight: 600;
 }
 .header-right button:first-child i{
     margin-right: 5px;
@@ -127,6 +130,8 @@
     border-radius: 5px;
     display: flex;
     align-items: center;
+    font-size: 1rem;
+    padding: 0 15px;
 }
 .icon{
     width: 20px;
@@ -140,9 +145,11 @@
 }
 .icon i{
     color: #f95043;
+    font-size: 0.6rem;
 }
 .menu-box{
     position: fixed;
+    width: 15%;
 }
 .popular-box{
     margin-left: 50px;
@@ -169,25 +176,4 @@
     color: #e6e6e6;
     font-size: 1.2rem;
     font-weight: 500;
-}
-footer{
-    margin-top: 100px;
-    border-top: 1px solid #282828;
-    padding: 30px 50px;
-    display: flex;
-    justify-content: space-between;
-    color: #e6e6e6;
-    font-size: 1.1rem;
-}
-footer p{
-    font-weight: 400;
-}
-.footer-btn a{
-    text-decoration: none;
-    padding: 0 20px;
-    cursor: pointer;
-    font-weight: 500;
-}
-.footer-btn a:last-child{
-    padding-right: 0;
 }
